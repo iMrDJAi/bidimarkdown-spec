@@ -838,6 +838,53 @@ bar</p>
 ````````````````````````````````
 
 
+## Bidirectional content
+
+The spec introduces convenient support for bidirectional content,
+allowing texts in languages that are written from right to left to
+render correctly.
+
+This is done by adding the `dir` attribute with the value `auto`
+to [block](#blocks) elements. With some exceptions:
+
+Elements that may not cantain [inline](#inline) content are exempt
+from having `dir="auto"`.
+
+```````````````````````````````` example
+---
+.
+<hr />
+````````````````````````````````
+
+Elements that isolate [inline](#inline) content from parent
+[container blocks](#container-blocks) relying on it to determine
+their direction are exempt from having `dir="auto"`.
+
+```````````````````````````````` example
+foo
+
+> foo
+.
+<p dir="auto">foo</p>
+<blockquote dir="auto">
+<p>foo</p>
+</blockquote>
+````````````````````````````````
+
+Elements that may break the layout or cause UX issues are exempt
+from having `dir="auto"`.
+
+```````````````````````````````` example
+1. foo
+2. فوو
+.
+<ol dir="auto">
+  <li>foo</li>
+  <li>فوو</li>
+</ol>
+````````````````````````````````
+
+
 
 # Blocks and inlines
 
