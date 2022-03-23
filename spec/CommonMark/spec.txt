@@ -863,8 +863,8 @@ from having `dir="auto"`.
 2. فوو
 .
 <ol dir="auto">
-  <li>foo</li>
-  <li>فوو</li>
+<li>foo</li>
+<li>فوو</li>
 </ol>
 ````````````````````````````````
 
