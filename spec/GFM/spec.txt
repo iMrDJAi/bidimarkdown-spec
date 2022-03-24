@@ -401,7 +401,7 @@ as indentation with four spaces would:
 
 →bar
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 <p>bar</p>
@@ -414,7 +414,7 @@ as indentation with four spaces would:
 
 →→bar
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 <pre><code>  bar
@@ -435,7 +435,7 @@ code block starting with two spaces.
 ```````````````````````````````` example
 >→→foo
 .
-<blockquote>
+<blockquote dir="auto">
 <pre><code>  foo
 </code></pre>
 </blockquote>
@@ -444,7 +444,7 @@ code block starting with two spaces.
 ```````````````````````````````` example
 -→→foo
 .
-<ul>
+<ul dir="auto">
 <li>
 <pre><code>  foo
 </code></pre>
@@ -467,7 +467,7 @@ bar
    - bar
 → - baz
 .
-<ul>
+<ul dir="auto">
 <li>foo
 <ul>
 <li>bar
@@ -483,7 +483,7 @@ bar
 ```````````````````````````````` example
 #→Foo
 .
-<h1>Foo</h1>
+<h1 dir="auto">Foo</h1>
 ````````````````````````````````
 
 ```````````````````````````````` example
@@ -506,7 +506,7 @@ Any ASCII punctuation character may be backslash-escaped:
 ```````````````````````````````` example
 \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~
 .
-<p>!&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</p>
+<p dir="auto">!&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</p>
 ````````````````````````````````
 
 
@@ -516,7 +516,7 @@ backslashes:
 ```````````````````````````````` example
 \→\A\a\ \3\φ\«
 .
-<p>\→\A\a\ \3\φ\«</p>
+<p dir="auto">\→\A\a\ \3\φ\«</p>
 ````````````````````````````````
 
 
@@ -534,7 +534,7 @@ not have their usual Markdown meanings:
 \[foo]: /url "not a reference"
 \&ouml; not a character entity
 .
-<p>*not emphasized*
+<p dir="auto">*not emphasized*
 &lt;br/&gt; not a tag
 [not a link](/foo)
 `not code`
@@ -551,7 +551,7 @@ If a backslash is itself escaped, the following character is not:
 ```````````````````````````````` example
 \\*emphasis*
 .
-<p>\<em>emphasis</em></p>
+<p dir="auto">\<em>emphasis</em></p>
 ````````````````````````````````
 
 
@@ -561,7 +561,7 @@ A backslash at the end of the line is a [hard line break]:
 foo\
 bar
 .
-<p>foo<br />
+<p dir="auto">foo<br />
 bar</p>
 ````````````````````````````````
 
@@ -572,7 +572,7 @@ raw HTML:
 ```````````````````````````````` example
 `` \[\` ``
 .
-<p><code>\[\`</code></p>
+<p dir="auto"><code>\[\`</code></p>
 ````````````````````````````````
 
 
@@ -597,7 +597,7 @@ raw HTML:
 ```````````````````````````````` example
 <http://example.com?find=\*>
 .
-<p><a href="http://example.com?find=%5C*">http://example.com?find=\*</a></p>
+<p dir="auto"><a href="http://example.com?find=%5C*">http://example.com?find=\*</a></p>
 ````````````````````````````````
 
 
@@ -614,7 +614,7 @@ link references, and [info strings] in [fenced code blocks]:
 ```````````````````````````````` example
 [foo](/bar\* "ti\*tle")
 .
-<p><a href="/bar*" title="ti*tle">foo</a></p>
+<p dir="auto"><a href="/bar*" title="ti*tle">foo</a></p>
 ````````````````````````````````
 
 
@@ -623,7 +623,7 @@ link references, and [info strings] in [fenced code blocks]:
 
 [foo]: /bar\* "ti\*tle"
 .
-<p><a href="/bar*" title="ti*tle">foo</a></p>
+<p dir="auto"><a href="/bar*" title="ti*tle">foo</a></p>
 ````````````````````````````````
 
 
@@ -668,7 +668,7 @@ references and their corresponding code points.
 &frac34; &HilbertSpace; &DifferentialD;
 &ClockwiseContourIntegral; &ngE;
 .
-<p>  &amp; © Æ Ď
+<p dir="auto">  &amp; © Æ Ď
 ¾ ℋ ⅆ
 ∲ ≧̸</p>
 ````````````````````````````````
@@ -685,7 +685,7 @@ the code point `U+0000` will also be replaced by `U+FFFD`.
 ```````````````````````````````` example
 &#35; &#1234; &#992; &#0;
 .
-<p># Ӓ Ϡ �</p>
+<p dir="auto"># Ӓ Ϡ �</p>
 ````````````````````````````````
 
 
@@ -698,7 +698,7 @@ time specified with a hexadecimal numeral instead of decimal).
 ```````````````````````````````` example
 &#X22; &#XD06; &#xcab;
 .
-<p>&quot; ആ ಫ</p>
+<p dir="auto">&quot; ആ ಫ</p>
 ````````````````````````````````
 
 
@@ -710,7 +710,7 @@ Here are some nonentities:
 &#abcdef0;
 &ThisIsNotDefined; &hi?;
 .
-<p>&amp;nbsp &amp;x; &amp;#; &amp;#x;
+<p dir="auto">&amp;nbsp &amp;x; &amp;#; &amp;#x;
 &amp;#87654321;
 &amp;#abcdef0;
 &amp;ThisIsNotDefined; &amp;hi?;</p>
@@ -724,7 +724,7 @@ recognized here, because it makes the grammar too ambiguous:
 ```````````````````````````````` example
 &copy
 .
-<p>&amp;copy</p>
+<p dir="auto">&amp;copy</p>
 ````````````````````````````````
 
 
@@ -734,7 +734,7 @@ recognized as entity references either:
 ```````````````````````````````` example
 &MadeUpEntity;
 .
-<p>&amp;MadeUpEntity;</p>
+<p dir="auto">&amp;MadeUpEntity;</p>
 ````````````````````````````````
 
 
@@ -752,7 +752,7 @@ URLs, [link titles], and [fenced code block][] [info strings]:
 ```````````````````````````````` example
 [foo](/f&ouml;&ouml; "f&ouml;&ouml;")
 .
-<p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
+<p dir="auto"><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
 ````````````````````````````````
 
 
@@ -761,7 +761,7 @@ URLs, [link titles], and [fenced code block][] [info strings]:
 
 [foo]: /f&ouml;&ouml; "f&ouml;&ouml;"
 .
-<p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
+<p dir="auto"><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
 ````````````````````````````````
 
 
@@ -781,7 +781,7 @@ text in code spans and code blocks:
 ```````````````````````````````` example
 `f&ouml;&ouml;`
 .
-<p><code>f&amp;ouml;&amp;ouml;</code></p>
+<p dir="auto"><code>f&amp;ouml;&amp;ouml;</code></p>
 ````````````````````````````````
 
 
@@ -801,7 +801,7 @@ documents.
 &#42;foo&#42;
 *foo*
 .
-<p>*foo*
+<p dir="auto">*foo*
 <em>foo</em></p>
 ````````````````````````````````
 
@@ -810,8 +810,8 @@ documents.
 
 * foo
 .
-<p>* foo</p>
-<ul>
+<p dir="auto">* foo</p>
+<ul dir="auto">
 <li>foo</li>
 </ul>
 ````````````````````````````````
@@ -819,7 +819,7 @@ documents.
 ```````````````````````````````` example
 foo&#10;&#10;bar
 .
-<p>foo
+<p dir="auto">foo
 
 bar</p>
 ````````````````````````````````
@@ -827,14 +827,14 @@ bar</p>
 ```````````````````````````````` example
 &#9;foo
 .
-<p>→foo</p>
+<p dir="auto">→foo</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [a](url &quot;tit&quot;)
 .
-<p>[a](url &quot;tit&quot;)</p>
+<p dir="auto">[a](url &quot;tit&quot;)</p>
 ````````````````````````````````
 
 
@@ -905,7 +905,7 @@ two items, not a list with one item containing a code span:
 - `one
 - two`
 .
-<ul>
+<ul dir="auto">
 <li>`one</li>
 <li>two`</li>
 </ul>
@@ -956,14 +956,14 @@ Wrong characters:
 ```````````````````````````````` example
 +++
 .
-<p>+++</p>
+<p dir="auto">+++</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ===
 .
-<p>===</p>
+<p dir="auto">===</p>
 ````````````````````````````````
 
 
@@ -974,7 +974,7 @@ Not enough characters:
 **
 __
 .
-<p>--
+<p dir="auto">--
 **
 __</p>
 ````````````````````````````````
@@ -1007,7 +1007,7 @@ Four spaces of indentation is too many:
 Foo
     ***
 .
-<p>Foo
+<p dir="auto">Foo
 ***</p>
 ````````````````````````````````
 
@@ -1062,9 +1062,9 @@ a------
 
 ---a---
 .
-<p>_ _ _ _ a</p>
-<p>a------</p>
-<p>---a---</p>
+<p dir="auto">_ _ _ _ a</p>
+<p dir="auto">a------</p>
+<p dir="auto">---a---</p>
 ````````````````````````````````
 
 
@@ -1074,7 +1074,7 @@ So, this is not a thematic break:
 ```````````````````````````````` example
  *-*
 .
-<p><em>-</em></p>
+<p dir="auto"><em>-</em></p>
 ````````````````````````````````
 
 
@@ -1085,11 +1085,11 @@ Thematic breaks do not need blank lines before or after:
 ***
 - bar
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 </ul>
 <hr />
-<ul>
+<ul dir="auto">
 <li>bar</li>
 </ul>
 ````````````````````````````````
@@ -1102,9 +1102,9 @@ Foo
 ***
 bar
 .
-<p>Foo</p>
+<p dir="auto">Foo</p>
 <hr />
-<p>bar</p>
+<p dir="auto">bar</p>
 ````````````````````````````````
 
 
@@ -1119,8 +1119,8 @@ Foo
 ---
 bar
 .
-<h2>Foo</h2>
-<p>bar</p>
+<h2 dir="auto">Foo</h2>
+<p dir="auto">bar</p>
 ````````````````````````````````
 
 
@@ -1132,11 +1132,11 @@ interpretations of a line, the thematic break takes precedence:
 * * *
 * Bar
 .
-<ul>
+<ul dir="auto">
 <li>Foo</li>
 </ul>
 <hr />
-<ul>
+<ul dir="auto">
 <li>Bar</li>
 </ul>
 ````````````````````````````````
@@ -1148,7 +1148,7 @@ If you want a thematic break in a list item, use a different bullet:
 - Foo
 - * * *
 .
-<ul>
+<ul dir="auto">
 <li>Foo</li>
 <li>
 <hr />
@@ -1181,12 +1181,12 @@ Simple headings:
 ##### foo
 ###### foo
 .
-<h1>foo</h1>
-<h2>foo</h2>
-<h3>foo</h3>
-<h4>foo</h4>
-<h5>foo</h5>
-<h6>foo</h6>
+<h1 dir="auto">foo</h1>
+<h2 dir="auto">foo</h2>
+<h3 dir="auto">foo</h3>
+<h4 dir="auto">foo</h4>
+<h5 dir="auto">foo</h5>
+<h6 dir="auto">foo</h6>
 ````````````````````````````````
 
 
@@ -1195,7 +1195,7 @@ More than six `#` characters is not a heading:
 ```````````````````````````````` example
 ####### foo
 .
-<p>####### foo</p>
+<p dir="auto">####### foo</p>
 ````````````````````````````````
 
 
@@ -1212,8 +1212,8 @@ headings:
 
 #hashtag
 .
-<p>#5 bolt</p>
-<p>#hashtag</p>
+<p dir="auto">#5 bolt</p>
+<p dir="auto">#hashtag</p>
 ````````````````````````````````
 
 
@@ -1222,7 +1222,7 @@ This is not a heading, because the first `#` is escaped:
 ```````````````````````````````` example
 \## foo
 .
-<p>## foo</p>
+<p dir="auto">## foo</p>
 ````````````````````````````````
 
 
@@ -1231,7 +1231,7 @@ Contents are parsed as inlines:
 ```````````````````````````````` example
 # foo *bar* \*baz\*
 .
-<h1>foo <em>bar</em> *baz*</h1>
+<h1 dir="auto">foo <em>bar</em> *baz*</h1>
 ````````````````````````````````
 
 
@@ -1240,7 +1240,7 @@ Leading and trailing spaces or tabs are ignored in parsing inline content:
 ```````````````````````````````` example
 #                  foo                     
 .
-<h1>foo</h1>
+<h1 dir="auto">foo</h1>
 ````````````````````````````````
 
 
@@ -1251,9 +1251,9 @@ Up to three spaces of indentation are allowed:
   ## foo
    # foo
 .
-<h3>foo</h3>
-<h2>foo</h2>
-<h1>foo</h1>
+<h3 dir="auto">foo</h3>
+<h2 dir="auto">foo</h2>
+<h1 dir="auto">foo</h1>
 ````````````````````````````````
 
 
@@ -1271,7 +1271,7 @@ Four spaces of indentation is too many:
 foo
     # bar
 .
-<p>foo
+<p dir="auto">foo
 # bar</p>
 ````````````````````````````````
 
@@ -1282,8 +1282,8 @@ A closing sequence of `#` characters is optional:
 ## foo ##
   ###   bar    ###
 .
-<h2>foo</h2>
-<h3>bar</h3>
+<h2 dir="auto">foo</h2>
+<h3 dir="auto">bar</h3>
 ````````````````````````````````
 
 
@@ -1293,8 +1293,8 @@ It need not be the same length as the opening sequence:
 # foo ##################################
 ##### foo ##
 .
-<h1>foo</h1>
-<h5>foo</h5>
+<h1 dir="auto">foo</h1>
+<h5 dir="auto">foo</h5>
 ````````````````````````````````
 
 
@@ -1303,7 +1303,7 @@ Spaces or tabs are allowed after the closing sequence:
 ```````````````````````````````` example
 ### foo ###     
 .
-<h3>foo</h3>
+<h3 dir="auto">foo</h3>
 ````````````````````````````````
 
 
@@ -1314,7 +1314,7 @@ heading:
 ```````````````````````````````` example
 ### foo ### b
 .
-<h3>foo ### b</h3>
+<h3 dir="auto">foo ### b</h3>
 ````````````````````````````````
 
 
@@ -1323,7 +1323,7 @@ The closing sequence must be preceded by a space or tab:
 ```````````````````````````````` example
 # foo#
 .
-<h1>foo#</h1>
+<h1 dir="auto">foo#</h1>
 ````````````````````````````````
 
 
@@ -1335,9 +1335,9 @@ of the closing sequence:
 ## foo #\##
 # foo \#
 .
-<h3>foo ###</h3>
-<h2>foo ###</h2>
-<h1>foo #</h1>
+<h3 dir="auto">foo ###</h3>
+<h2 dir="auto">foo ###</h2>
+<h1 dir="auto">foo #</h1>
 ````````````````````````````````
 
 
@@ -1350,7 +1350,7 @@ lines, and they can interrupt paragraphs:
 ****
 .
 <hr />
-<h2>foo</h2>
+<h2 dir="auto">foo</h2>
 <hr />
 ````````````````````````````````
 
@@ -1360,9 +1360,9 @@ Foo bar
 # baz
 Bar foo
 .
-<p>Foo bar</p>
-<h1>baz</h1>
-<p>Bar foo</p>
+<p dir="auto">Foo bar</p>
+<h1 dir="auto">baz</h1>
+<p dir="auto">Bar foo</p>
 ````````````````````````````````
 
 
@@ -1373,9 +1373,9 @@ ATX headings can be empty:
 #
 ### ###
 .
-<h2></h2>
-<h1></h1>
-<h3></h3>
+<h2 dir="auto"></h2>
+<h1 dir="auto"></h1>
+<h3 dir="auto"></h3>
 ````````````````````````````````
 
 
@@ -1418,8 +1418,8 @@ Foo *bar*
 Foo *bar*
 ---------
 .
-<h1>Foo <em>bar</em></h1>
-<h2>Foo <em>bar</em></h2>
+<h1 dir="auto">Foo <em>bar</em></h1>
+<h2 dir="auto">Foo <em>bar</em></h2>
 ````````````````````````````````
 
 
@@ -1430,7 +1430,7 @@ Foo *bar
 baz*
 ====
 .
-<h1>Foo <em>bar
+<h1 dir="auto">Foo <em>bar
 baz</em></h1>
 ````````````````````````````````
 
@@ -1444,7 +1444,7 @@ spaces or tabs.
 baz*→
 ====
 .
-<h1>Foo <em>bar
+<h1 dir="auto">Foo <em>bar
 baz</em></h1>
 ````````````````````````````````
 
@@ -1458,8 +1458,8 @@ Foo
 Foo
 =
 .
-<h2>Foo</h2>
-<h1>Foo</h1>
+<h2 dir="auto">Foo</h2>
+<h1 dir="auto">Foo</h1>
 ````````````````````````````````
 
 
@@ -1476,9 +1476,9 @@ need not line up with the underlining:
   Foo
   ===
 .
-<h2>Foo</h2>
-<h2>Foo</h2>
-<h1>Foo</h1>
+<h2 dir="auto">Foo</h2>
+<h2 dir="auto">Foo</h2>
+<h1 dir="auto">Foo</h1>
 ````````````````````````````````
 
 
@@ -1507,7 +1507,7 @@ indentation, and may have trailing spaces or tabs:
 Foo
    ----      
 .
-<h2>Foo</h2>
+<h2 dir="auto">Foo</h2>
 ````````````````````````````````
 
 
@@ -1517,7 +1517,7 @@ Four spaces of indentation is too many:
 Foo
     ---
 .
-<p>Foo
+<p dir="auto">Foo
 ---</p>
 ````````````````````````````````
 
@@ -1531,9 +1531,9 @@ Foo
 Foo
 --- -
 .
-<p>Foo
+<p dir="auto">Foo
 = =</p>
-<p>Foo</p>
+<p dir="auto">Foo</p>
 <hr />
 ````````````````````````````````
 
@@ -1544,7 +1544,7 @@ Trailing spaces or tabs in the content line do not cause a hard line break:
 Foo  
 -----
 .
-<h2>Foo</h2>
+<h2 dir="auto">Foo</h2>
 ````````````````````````````````
 
 
@@ -1554,7 +1554,7 @@ Nor does a backslash at the end:
 Foo\
 ----
 .
-<h2>Foo\</h2>
+<h2 dir="auto">Foo\</h2>
 ````````````````````````````````
 
 
@@ -1570,10 +1570,10 @@ indicators of inline structure, the following are setext headings:
 ---
 of dashes"/>
 .
-<h2>`Foo</h2>
-<p>`</p>
-<h2>&lt;a title=&quot;a lot</h2>
-<p>of dashes&quot;/&gt;</p>
+<h2 dir="auto">`Foo</h2>
+<p dir="auto">`</p>
+<h2 dir="auto">&lt;a title=&quot;a lot</h2>
+<p dir="auto">of dashes&quot;/&gt;</p>
 ````````````````````````````````
 
 
@@ -1584,7 +1584,7 @@ line] in a list item or block quote:
 > Foo
 ---
 .
-<blockquote>
+<blockquote dir="auto">
 <p>Foo</p>
 </blockquote>
 <hr />
@@ -1596,7 +1596,7 @@ line] in a list item or block quote:
 bar
 ===
 .
-<blockquote>
+<blockquote dir="auto">
 <p>foo
 bar
 ===</p>
@@ -1608,7 +1608,7 @@ bar
 - Foo
 ---
 .
-<ul>
+<ul dir="auto">
 <li>Foo</li>
 </ul>
 <hr />
@@ -1624,7 +1624,7 @@ Foo
 Bar
 ---
 .
-<h2>Foo
+<h2 dir="auto">Foo
 Bar</h2>
 ````````````````````````````````
 
@@ -1641,9 +1641,9 @@ Bar
 Baz
 .
 <hr />
-<h2>Foo</h2>
-<h2>Bar</h2>
-<p>Baz</p>
+<h2 dir="auto">Foo</h2>
+<h2 dir="auto">Bar</h2>
+<p dir="auto">Baz</p>
 ````````````````````````````````
 
 
@@ -1653,7 +1653,7 @@ Setext headings cannot be empty:
 
 ====
 .
-<p>====</p>
+<p dir="auto">====</p>
 ````````````````````````````````
 
 
@@ -1674,7 +1674,7 @@ in these examples gets interpreted as a thematic break:
 - foo
 -----
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 </ul>
 <hr />
@@ -1695,7 +1695,7 @@ in these examples gets interpreted as a thematic break:
 > foo
 -----
 .
-<blockquote>
+<blockquote dir="auto">
 <p>foo</p>
 </blockquote>
 <hr />
@@ -1709,7 +1709,7 @@ use backslash escapes:
 \> foo
 ------
 .
-<h2>&gt; foo</h2>
+<h2 dir="auto">&gt; foo</h2>
 ````````````````````````````````
 
 
@@ -1743,9 +1743,9 @@ bar
 ---
 baz
 .
-<p>Foo</p>
-<h2>bar</h2>
-<p>baz</p>
+<p dir="auto">Foo</p>
+<h2 dir="auto">bar</h2>
+<p dir="auto">baz</p>
 ````````````````````````````````
 
 
@@ -1760,10 +1760,10 @@ bar
 
 baz
 .
-<p>Foo
+<p dir="auto">Foo
 bar</p>
 <hr />
-<p>baz</p>
+<p dir="auto">baz</p>
 ````````````````````````````````
 
 
@@ -1776,10 +1776,10 @@ bar
 * * *
 baz
 .
-<p>Foo
+<p dir="auto">Foo
 bar</p>
 <hr />
-<p>baz</p>
+<p dir="auto">baz</p>
 ````````````````````````````````
 
 
@@ -1791,7 +1791,7 @@ bar
 \---
 baz
 .
-<p>Foo
+<p dir="auto">Foo
 bar
 ---
 baz</p>
@@ -1832,7 +1832,7 @@ item][list items], the list item interpretation takes precedence:
 
     bar
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 <p>bar</p>
@@ -1846,7 +1846,7 @@ item][list items], the list item interpretation takes precedence:
 
     - bar
 .
-<ol>
+<ol dir="auto">
 <li>
 <p>foo</p>
 <ul>
@@ -1920,7 +1920,7 @@ Foo
     bar
 
 .
-<p>Foo
+<p dir="auto">Foo
 bar</p>
 ````````````````````````````````
 
@@ -1935,7 +1935,7 @@ bar
 .
 <pre><code>foo
 </code></pre>
-<p>bar</p>
+<p dir="auto">bar</p>
 ````````````````````````````````
 
 
@@ -1950,10 +1950,10 @@ Heading
     foo
 ----
 .
-<h1>Heading</h1>
+<h1 dir="auto">Heading</h1>
 <pre><code>foo
 </code></pre>
-<h2>Heading</h2>
+<h2 dir="auto">Heading</h2>
 <pre><code>foo
 </code></pre>
 <hr />
@@ -2076,7 +2076,7 @@ Fewer than three backticks is not enough:
 foo
 ``
 .
-<p><code>foo</code></p>
+<p dir="auto"><code>foo</code></p>
 ````````````````````````````````
 
 The closing code fence must use the same character as the opening
@@ -2161,11 +2161,11 @@ aaa
 
 bbb
 .
-<blockquote>
+<blockquote dir="auto">
 <pre><code>aaa
 </code></pre>
 </blockquote>
-<p>bbb</p>
+<p dir="auto">bbb</p>
 ````````````````````````````````
 
 
@@ -2294,7 +2294,7 @@ Code fences (opening and closing) cannot contain internal spaces or tabs:
 ``` ```
 aaa
 .
-<p><code> </code>
+<p dir="auto"><code> </code>
 aaa</p>
 ````````````````````````````````
 
@@ -2320,10 +2320,10 @@ bar
 ```
 baz
 .
-<p>foo</p>
+<p dir="auto">foo</p>
 <pre><code>bar
 </code></pre>
-<p>baz</p>
+<p dir="auto">baz</p>
 ````````````````````````````````
 
 
@@ -2338,10 +2338,10 @@ bar
 ~~~
 # baz
 .
-<h2>foo</h2>
+<h2 dir="auto">foo</h2>
 <pre><code>bar
 </code></pre>
-<h1>baz</h1>
+<h1 dir="auto">baz</h1>
 ````````````````````````````````
 
 
@@ -2394,7 +2394,7 @@ end
 ``` aa ```
 foo
 .
-<p><code>aa</code>
+<p dir="auto"><code>aa</code>
 foo</p>
 ````````````````````````````````
 
@@ -2504,7 +2504,7 @@ _world_.
 <table><tr><td>
 <pre>
 **Hello**,
-<p><em>world</em>.
+<p dir="auto"><em>world</em>.
 </pre></p>
 </td></tr></table>
 ````````````````````````````````
@@ -2539,7 +2539,7 @@ okay.
     </td>
   </tr>
 </table>
-<p>okay.</p>
+<p dir="auto">okay.</p>
 ````````````````````````````````
 
 
@@ -2575,7 +2575,7 @@ Here we have two HTML blocks with a Markdown paragraph between them:
 </DIV>
 .
 <DIV CLASS="foo">
-<p><em>Markdown</em></p>
+<p dir="auto"><em>Markdown</em></p>
 </DIV>
 ````````````````````````````````
 
@@ -2614,7 +2614,7 @@ An open tag need not be closed:
 .
 <div>
 *foo*
-<p><em>bar</em></p>
+<p dir="auto"><em>bar</em></p>
 ````````````````````````````````
 
 
@@ -2769,7 +2769,7 @@ line).  So the contents get interpreted as CommonMark:
 </del>
 .
 <del>
-<p><em>foo</em></p>
+<p dir="auto"><em>foo</em></p>
 </del>
 ````````````````````````````````
 
@@ -2782,7 +2782,7 @@ rather than an [HTML block].)
 ```````````````````````````````` example
 <del>*foo*</del>
 .
-<p><del><em>foo</em></del></p>
+<p dir="auto"><del><em>foo</em></del></p>
 ````````````````````````````````
 
 
@@ -2810,7 +2810,7 @@ import Text.HTML.TagSoup
 main :: IO ()
 main = print $ parseTags tags
 </code></pre>
-<p>okay</p>
+<p dir="auto">okay</p>
 ````````````````````````````````
 
 
@@ -2829,7 +2829,7 @@ okay
 
 document.getElementById("demo").innerHTML = "Hello JavaScript!";
 </script>
-<p>okay</p>
+<p dir="auto">okay</p>
 ````````````````````````````````
 
 
@@ -2870,7 +2870,7 @@ h1 {color:red;}
 
 p {color:blue;}
 </style>
-<p>okay</p>
+<p dir="auto">okay</p>
 ````````````````````````````````
 
 
@@ -2897,11 +2897,11 @@ foo
 
 bar
 .
-<blockquote>
+<blockquote dir="auto">
 <div>
 foo
 </blockquote>
-<p>bar</p>
+<p dir="auto">bar</p>
 ````````````````````````````````
 
 
@@ -2909,7 +2909,7 @@ foo
 - <div>
 - foo
 .
-<ul>
+<ul dir="auto">
 <li>
 <div>
 </li>
@@ -2925,7 +2925,7 @@ The end tag can occur on the same line as the start tag:
 *foo*
 .
 <style>p{color:red;}</style>
-<p><em>foo</em></p>
+<p dir="auto"><em>foo</em></p>
 ````````````````````````````````
 
 
@@ -2934,7 +2934,7 @@ The end tag can occur on the same line as the start tag:
 *baz*
 .
 <!-- foo -->*bar*
-<p><em>baz</em></p>
+<p dir="auto"><em>baz</em></p>
 ````````````````````````````````
 
 
@@ -2965,7 +2965,7 @@ okay
 
 bar
    baz -->
-<p>okay</p>
+<p dir="auto">okay</p>
 ````````````````````````````````
 
 
@@ -2985,7 +2985,7 @@ okay
   echo '>';
 
 ?>
-<p>okay</p>
+<p dir="auto">okay</p>
 ````````````````````````````````
 
 
@@ -3027,7 +3027,7 @@ function matchwo(a,b)
   }
 }
 ]]>
-<p>okay</p>
+<p dir="auto">okay</p>
 ````````````````````````````````
 
 
@@ -3065,7 +3065,7 @@ Foo
 bar
 </div>
 .
-<p>Foo</p>
+<p dir="auto">Foo</p>
 <div>
 bar
 </div>
@@ -3096,7 +3096,7 @@ Foo
 <a href="bar">
 baz
 .
-<p>Foo
+<p dir="auto">Foo
 <a href="bar">
 baz</p>
 ````````````````````````````````
@@ -3140,7 +3140,7 @@ Compare:
 </div>
 .
 <div>
-<p><em>Emphasized</em> text.</p>
+<p dir="auto"><em>Emphasized</em> text.</p>
 </div>
 ````````````````````````````````
 
@@ -3248,7 +3248,7 @@ them.
 
 [foo]
 .
-<p><a href="/url" title="title">foo</a></p>
+<p dir="auto"><a href="/url" title="title">foo</a></p>
 ````````````````````````````````
 
 
@@ -3259,7 +3259,7 @@ them.
 
 [foo]
 .
-<p><a href="/url" title="the title">foo</a></p>
+<p dir="auto"><a href="/url" title="the title">foo</a></p>
 ````````````````````````````````
 
 
@@ -3268,7 +3268,7 @@ them.
 
 [Foo*bar\]]
 .
-<p><a href="my_(url)" title="title (with parens)">Foo*bar]</a></p>
+<p dir="auto"><a href="my_(url)" title="title (with parens)">Foo*bar]</a></p>
 ````````````````````````````````
 
 
@@ -3279,7 +3279,7 @@ them.
 
 [Foo bar]
 .
-<p><a href="my%20url" title="title">Foo bar</a></p>
+<p dir="auto"><a href="my%20url" title="title">Foo bar</a></p>
 ````````````````````````````````
 
 
@@ -3294,7 +3294,7 @@ line2
 
 [foo]
 .
-<p><a href="/url" title="
+<p dir="auto"><a href="/url" title="
 title
 line1
 line2
@@ -3311,9 +3311,9 @@ with blank line'
 
 [foo]
 .
-<p>[foo]: /url 'title</p>
-<p>with blank line'</p>
-<p>[foo]</p>
+<p dir="auto">[foo]: /url 'title</p>
+<p dir="auto">with blank line'</p>
+<p dir="auto">[foo]</p>
 ````````````````````````````````
 
 
@@ -3325,7 +3325,7 @@ The title may be omitted:
 
 [foo]
 .
-<p><a href="/url">foo</a></p>
+<p dir="auto"><a href="/url">foo</a></p>
 ````````````````````````````````
 
 
@@ -3336,8 +3336,8 @@ The link destination may not be omitted:
 
 [foo]
 .
-<p>[foo]:</p>
-<p>[foo]</p>
+<p dir="auto">[foo]:</p>
+<p dir="auto">[foo]</p>
 ````````````````````````````````
 
  However, an empty link destination may be specified using
@@ -3348,7 +3348,7 @@ The link destination may not be omitted:
 
 [foo]
 .
-<p><a href="">foo</a></p>
+<p dir="auto"><a href="">foo</a></p>
 ````````````````````````````````
 
 The title must be separated from the link destination by
@@ -3359,8 +3359,8 @@ spaces or tabs:
 
 [foo]
 .
-<p>[foo]: <bar>(baz)</p>
-<p>[foo]</p>
+<p dir="auto">[foo]: <bar>(baz)</p>
+<p dir="auto">[foo]</p>
 ````````````````````````````````
 
 
@@ -3372,7 +3372,7 @@ and literal backslashes:
 
 [foo]
 .
-<p><a href="/url%5Cbar*baz" title="foo&quot;bar\baz">foo</a></p>
+<p dir="auto"><a href="/url%5Cbar*baz" title="foo&quot;bar\baz">foo</a></p>
 ````````````````````````````````
 
 
@@ -3383,7 +3383,7 @@ A link can come before its corresponding definition:
 
 [foo]: url
 .
-<p><a href="url">foo</a></p>
+<p dir="auto"><a href="url">foo</a></p>
 ````````````````````````````````
 
 
@@ -3396,7 +3396,7 @@ precedence:
 [foo]: first
 [foo]: second
 .
-<p><a href="first">foo</a></p>
+<p dir="auto"><a href="first">foo</a></p>
 ````````````````````````````````
 
 
@@ -3408,7 +3408,7 @@ case-insensitive (see [matches]).
 
 [Foo]
 .
-<p><a href="/url">Foo</a></p>
+<p dir="auto"><a href="/url">Foo</a></p>
 ````````````````````````````````
 
 
@@ -3417,7 +3417,7 @@ case-insensitive (see [matches]).
 
 [αγω]
 .
-<p><a href="/%CF%86%CE%BF%CF%85">αγω</a></p>
+<p dir="auto"><a href="/%CF%86%CE%BF%CF%85">αγω</a></p>
 ````````````````````````````````
 
 
@@ -3441,7 +3441,7 @@ foo
 ]: /url
 bar
 .
-<p>bar</p>
+<p dir="auto">bar</p>
 ````````````````````````````````
 
 
@@ -3451,7 +3451,7 @@ characters other than spaces or tabs after the title:
 ```````````````````````````````` example
 [foo]: /url "title" ok
 .
-<p>[foo]: /url &quot;title&quot; ok</p>
+<p dir="auto">[foo]: /url &quot;title&quot; ok</p>
 ````````````````````````````````
 
 
@@ -3461,7 +3461,7 @@ This is a link reference definition, but it has no title:
 [foo]: /url
 "title" ok
 .
-<p>&quot;title&quot; ok</p>
+<p dir="auto">&quot;title&quot; ok</p>
 ````````````````````````````````
 
 
@@ -3475,7 +3475,7 @@ four spaces:
 .
 <pre><code>[foo]: /url &quot;title&quot;
 </code></pre>
-<p>[foo]</p>
+<p dir="auto">[foo]</p>
 ````````````````````````````````
 
 
@@ -3491,7 +3491,7 @@ a code block:
 .
 <pre><code>[foo]: /url
 </code></pre>
-<p>[foo]</p>
+<p dir="auto">[foo]</p>
 ````````````````````````````````
 
 
@@ -3503,9 +3503,9 @@ Foo
 
 [bar]
 .
-<p>Foo
+<p dir="auto">Foo
 [bar]: /baz</p>
-<p>[bar]</p>
+<p dir="auto">[bar]</p>
 ````````````````````````````````
 
 
@@ -3517,8 +3517,8 @@ and thematic breaks, and it need not be followed by a blank line.
 [foo]: /url
 > bar
 .
-<h1><a href="/url">Foo</a></h1>
-<blockquote>
+<h1 dir="auto"><a href="/url">Foo</a></h1>
+<blockquote dir="auto">
 <p>bar</p>
 </blockquote>
 ````````````````````````````````
@@ -3529,8 +3529,8 @@ bar
 ===
 [foo]
 .
-<h1>bar</h1>
-<p><a href="/url">foo</a></p>
+<h1 dir="auto">bar</h1>
+<p dir="auto"><a href="/url">foo</a></p>
 ````````````````````````````````
 
 ```````````````````````````````` example
@@ -3538,7 +3538,7 @@ bar
 ===
 [foo]
 .
-<p>===
+<p dir="auto">===
 <a href="/url">foo</a></p>
 ````````````````````````````````
 
@@ -3556,7 +3556,7 @@ can occur one after another, without intervening blank lines.
 [bar],
 [baz]
 .
-<p><a href="/foo-url" title="foo">foo</a>,
+<p dir="auto"><a href="/foo-url" title="foo">foo</a>,
 <a href="/bar-url" title="bar">bar</a>,
 <a href="/baz-url">baz</a></p>
 ````````````````````````````````
@@ -3572,8 +3572,8 @@ are defined:
 
 > [foo]: /url
 .
-<p><a href="/url">foo</a></p>
-<blockquote>
+<p dir="auto"><a href="/url">foo</a></p>
+<blockquote dir="auto">
 </blockquote>
 ````````````````````````````````
 
@@ -3594,8 +3594,8 @@ aaa
 
 bbb
 .
-<p>aaa</p>
-<p>bbb</p>
+<p dir="auto">aaa</p>
+<p dir="auto">bbb</p>
 ````````````````````````````````
 
 
@@ -3608,9 +3608,9 @@ bbb
 ccc
 ddd
 .
-<p>aaa
+<p dir="auto">aaa
 bbb</p>
-<p>ccc
+<p dir="auto">ccc
 ddd</p>
 ````````````````````````````````
 
@@ -3623,8 +3623,8 @@ aaa
 
 bbb
 .
-<p>aaa</p>
-<p>bbb</p>
+<p dir="auto">aaa</p>
+<p dir="auto">bbb</p>
 ````````````````````````````````
 
 
@@ -3634,7 +3634,7 @@ Leading spaces or tabs are skipped:
   aaa
  bbb
 .
-<p>aaa
+<p dir="auto">aaa
 bbb</p>
 ````````````````````````````````
 
@@ -3647,7 +3647,7 @@ aaa
              bbb
                                        ccc
 .
-<p>aaa
+<p dir="auto">aaa
 bbb
 ccc</p>
 ````````````````````````````````
@@ -3660,7 +3660,7 @@ Four spaces of indentation is too many:
    aaa
 bbb
 .
-<p>aaa
+<p dir="auto">aaa
 bbb</p>
 ````````````````````````````````
 
@@ -3671,7 +3671,7 @@ bbb
 .
 <pre><code>aaa
 </code></pre>
-<p>bbb</p>
+<p dir="auto">bbb</p>
 ````````````````````````````````
 
 
@@ -3683,7 +3683,7 @@ break]:
 aaa     
 bbb     
 .
-<p>aaa<br />
+<p dir="auto">aaa<br />
 bbb</p>
 ````````````````````````````````
 
@@ -3706,8 +3706,8 @@ aaa
 
   
 .
-<p>aaa</p>
-<h1>aaa</h1>
+<p dir="auto">aaa</p>
+<h1 dir="auto">aaa</h1>
 ````````````````````````````````
 
 <div class="extension">
@@ -3736,17 +3736,17 @@ right, or center alignment respectively.
 | --- | --- |
 | baz | bim |
 .
-<table>
+<table dir="auto">
 <thead>
 <tr>
 <th>foo</th>
-<th>bar</th>
+<th dir="auto">bar</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>baz</td>
-<td>bim</td>
+<td dir="auto">baz</td>
+<td dir="auto">bim</td>
 </tr>
 </tbody>
 </table>
@@ -3760,17 +3760,17 @@ they are. Likewise, use of leading and trailing pipes may be inconsistent:
 :-: | -----------:
 bar | baz
 .
-<table>
+<table dir="auto">
 <thead>
 <tr>
 <th align="center">abc</th>
-<th align="right">defghi</th>
+<th align="right" dir="auto">defghi</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">bar</td>
-<td align="right">baz</td>
+<td align="center" dir="auto">bar</td>
+<td align="right" dir="auto">baz</td>
 </tr>
 </tbody>
 </table>
@@ -3785,7 +3785,7 @@ inline spans:
 | b `\|` az |
 | b **\|** im |
 .
-<table>
+<table dir="auto">
 <thead>
 <tr>
 <th>f|oo</th>
@@ -3793,10 +3793,10 @@ inline spans:
 </thead>
 <tbody>
 <tr>
-<td>b <code>|</code> az</td>
+<td dir="auto">b <code>|</code> az</td>
 </tr>
 <tr>
-<td>b <strong>|</strong> im</td>
+<td dir="auto">b <strong>|</strong> im</td>
 </tr>
 </tbody>
 </table>
@@ -3811,21 +3811,21 @@ block-level structure:
 | bar | baz |
 > bar
 .
-<table>
+<table dir="auto">
 <thead>
 <tr>
 <th>abc</th>
-<th>def</th>
+<th dir="auto">def</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>bar</td>
-<td>baz</td>
+<td dir="auto">bar</td>
+<td dir="auto">baz</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote dir="auto">
 <p>bar</p>
 </blockquote>
 ````````````````````````````````
@@ -3838,25 +3838,25 @@ bar
 
 bar
 .
-<table>
+<table dir="auto">
 <thead>
 <tr>
 <th>abc</th>
-<th>def</th>
+<th dir="auto">def</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>bar</td>
-<td>baz</td>
+<td dir="auto">bar</td>
+<td dir="auto">baz</td>
 </tr>
 <tr>
-<td>bar</td>
-<td></td>
+<td dir="auto">bar</td>
+<td dir="auto"></td>
 </tr>
 </tbody>
 </table>
-<p>bar</p>
+<p dir="auto">bar</p>
 ````````````````````````````````
 
 The header row must match the [delimiter row] in the number of cells.  If not,
@@ -3867,7 +3867,7 @@ a table will not be recognized:
 | --- |
 | bar |
 .
-<p>| abc | def |
+<p dir="auto">| abc | def |
 | --- |
 | bar |</p>
 ````````````````````````````````
@@ -3882,21 +3882,21 @@ cells are inserted.  If there are greater, the excess is ignored:
 | bar |
 | bar | baz | boo |
 .
-<table>
+<table dir="auto">
 <thead>
 <tr>
 <th>abc</th>
-<th>def</th>
+<th dir="auto">def</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>bar</td>
-<td></td>
+<td dir="auto">bar</td>
+<td dir="auto"></td>
 </tr>
 <tr>
-<td>bar</td>
-<td>baz</td>
+<td dir="auto">bar</td>
+<td dir="auto">baz</td>
 </tr>
 </tbody>
 </table>
@@ -3908,11 +3908,11 @@ If there are no rows in the body, no `<tbody>` is generated in HTML output:
 | abc | def |
 | --- | --- |
 .
-<table>
+<table dir="auto">
 <thead>
 <tr>
 <th>abc</th>
-<th>def</th>
+<th dir="auto">def</th>
 </tr>
 </thead>
 </table>
@@ -3977,9 +3977,9 @@ Here is a simple example:
 > bar
 > baz
 .
-<blockquote>
+<blockquote dir="auto">
 <h1>Foo</h1>
-<p>bar
+<p dir="auto">bar
 baz</p>
 </blockquote>
 ````````````````````````````````
@@ -3992,9 +3992,9 @@ The space or tab after the `>` characters can be omitted:
 >bar
 > baz
 .
-<blockquote>
+<blockquote dir="auto">
 <h1>Foo</h1>
-<p>bar
+<p dir="auto">bar
 baz</p>
 </blockquote>
 ````````````````````````````````
@@ -4007,9 +4007,9 @@ The `>` characters can be preceded by up to three spaces of indentation:
    > bar
  > baz
 .
-<blockquote>
+<blockquote dir="auto">
 <h1>Foo</h1>
-<p>bar
+<p dir="auto">bar
 baz</p>
 </blockquote>
 ````````````````````````````````
@@ -4037,9 +4037,9 @@ The Laziness clause allows us to omit the `>` before
 > bar
 baz
 .
-<blockquote>
+<blockquote dir="auto">
 <h1>Foo</h1>
-<p>bar
+<p dir="auto">bar
 baz</p>
 </blockquote>
 ````````````````````````````````
@@ -4053,7 +4053,7 @@ continuation lines:
 baz
 > foo
 .
-<blockquote>
+<blockquote dir="auto">
 <p>bar
 baz
 foo</p>
@@ -4076,7 +4076,7 @@ without changing the meaning:
 > foo
 ---
 .
-<blockquote>
+<blockquote dir="auto">
 <p>foo</p>
 </blockquote>
 <hr />
@@ -4096,12 +4096,12 @@ then the block quote ends after the first line:
 > - foo
 - bar
 .
-<blockquote>
+<blockquote dir="auto">
 <ul>
 <li>foo</li>
 </ul>
 </blockquote>
-<ul>
+<ul dir="auto">
 <li>bar</li>
 </ul>
 ````````````````````````````````
@@ -4114,7 +4114,7 @@ subsequent lines of an indented or fenced code block:
 >     foo
     bar
 .
-<blockquote>
+<blockquote dir="auto">
 <pre><code>foo
 </code></pre>
 </blockquote>
@@ -4128,10 +4128,10 @@ subsequent lines of an indented or fenced code block:
 foo
 ```
 .
-<blockquote>
+<blockquote dir="auto">
 <pre><code></code></pre>
 </blockquote>
-<p>foo</p>
+<p dir="auto">foo</p>
 <pre><code></code></pre>
 ````````````````````````````````
 
@@ -4143,7 +4143,7 @@ continuation line]:
 > foo
     - bar
 .
-<blockquote>
+<blockquote dir="auto">
 <p>foo
 - bar</p>
 </blockquote>
@@ -4166,7 +4166,7 @@ A block quote can be empty:
 ```````````````````````````````` example
 >
 .
-<blockquote>
+<blockquote dir="auto">
 </blockquote>
 ````````````````````````````````
 
@@ -4176,7 +4176,7 @@ A block quote can be empty:
 >  
 > 
 .
-<blockquote>
+<blockquote dir="auto">
 </blockquote>
 ````````````````````````````````
 
@@ -4188,7 +4188,7 @@ A block quote can have initial or final blank lines:
 > foo
 >  
 .
-<blockquote>
+<blockquote dir="auto">
 <p>foo</p>
 </blockquote>
 ````````````````````````````````
@@ -4201,10 +4201,10 @@ A blank line always separates block quotes:
 
 > bar
 .
-<blockquote>
+<blockquote dir="auto">
 <p>foo</p>
 </blockquote>
-<blockquote>
+<blockquote dir="auto">
 <p>bar</p>
 </blockquote>
 ````````````````````````````````
@@ -4222,7 +4222,7 @@ we get a single block quote:
 > foo
 > bar
 .
-<blockquote>
+<blockquote dir="auto">
 <p>foo
 bar</p>
 </blockquote>
@@ -4236,9 +4236,9 @@ To get a block quote with two paragraphs, use:
 >
 > bar
 .
-<blockquote>
+<blockquote dir="auto">
 <p>foo</p>
-<p>bar</p>
+<p dir="auto">bar</p>
 </blockquote>
 ````````````````````````````````
 
@@ -4249,8 +4249,8 @@ Block quotes can interrupt paragraphs:
 foo
 > bar
 .
-<p>foo</p>
-<blockquote>
+<p dir="auto">foo</p>
+<blockquote dir="auto">
 <p>bar</p>
 </blockquote>
 ````````````````````````````````
@@ -4264,11 +4264,11 @@ quotes:
 ***
 > bbb
 .
-<blockquote>
+<blockquote dir="auto">
 <p>aaa</p>
 </blockquote>
 <hr />
-<blockquote>
+<blockquote dir="auto">
 <p>bbb</p>
 </blockquote>
 ````````````````````````````````
@@ -4281,7 +4281,7 @@ a block quote and a following paragraph:
 > bar
 baz
 .
-<blockquote>
+<blockquote dir="auto">
 <p>bar
 baz</p>
 </blockquote>
@@ -4293,10 +4293,10 @@ baz</p>
 
 baz
 .
-<blockquote>
+<blockquote dir="auto">
 <p>bar</p>
 </blockquote>
-<p>baz</p>
+<p dir="auto">baz</p>
 ````````````````````````````````
 
 
@@ -4305,10 +4305,10 @@ baz
 >
 baz
 .
-<blockquote>
+<blockquote dir="auto">
 <p>bar</p>
 </blockquote>
-<p>baz</p>
+<p dir="auto">baz</p>
 ````````````````````````````````
 
 
@@ -4320,7 +4320,7 @@ nested block quote:
 > > > foo
 bar
 .
-<blockquote>
+<blockquote dir="auto">
 <blockquote>
 <blockquote>
 <p>foo
@@ -4336,7 +4336,7 @@ bar</p>
 > bar
 >>baz
 .
-<blockquote>
+<blockquote dir="auto">
 <blockquote>
 <blockquote>
 <p>foo
@@ -4358,11 +4358,11 @@ after the `>`:
 
 >    not code
 .
-<blockquote>
+<blockquote dir="auto">
 <pre><code>code
 </code></pre>
 </blockquote>
-<blockquote>
+<blockquote dir="auto">
 <p>not code</p>
 </blockquote>
 ````````````````````````````````
@@ -4415,11 +4415,11 @@ with two lines.
 
 > A block quote.
 .
-<p>A paragraph
+<p dir="auto">A paragraph
 with two lines.</p>
 <pre><code>indented code
 </code></pre>
-<blockquote>
+<blockquote dir="auto">
 <p>A block quote.</p>
 </blockquote>
 ````````````````````````````````
@@ -4437,7 +4437,7 @@ and the same contents as *Ls*:
 
     > A block quote.
 .
-<ol>
+<ol dir="auto">
 <li>
 <p>A paragraph
 with two lines.</p>
@@ -4467,10 +4467,10 @@ put under the list item:
 
  two
 .
-<ul>
+<ul dir="auto">
 <li>one</li>
 </ul>
-<p>two</p>
+<p dir="auto">two</p>
 ````````````````````````````````
 
 
@@ -4479,7 +4479,7 @@ put under the list item:
 
   two
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>one</p>
 <p>two</p>
@@ -4493,7 +4493,7 @@ put under the list item:
 
      two
 .
-<ul>
+<ul dir="auto">
 <li>one</li>
 </ul>
 <pre><code> two
@@ -4506,7 +4506,7 @@ put under the list item:
 
       two
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>one</p>
 <p>two</p>
@@ -4528,7 +4528,7 @@ this example:
 >>
 >>     two
 .
-<blockquote>
+<blockquote dir="auto">
 <blockquote>
 <ol>
 <li>
@@ -4555,12 +4555,12 @@ far enough past the blockquote marker:
 >>
   >  > two
 .
-<blockquote>
+<blockquote dir="auto">
 <blockquote>
 <ul>
 <li>one</li>
 </ul>
-<p>two</p>
+<p dir="auto">two</p>
 </blockquote>
 </blockquote>
 ````````````````````````````````
@@ -4574,8 +4574,8 @@ any following content, so these are not list items:
 
 2.two
 .
-<p>-one</p>
-<p>2.two</p>
+<p dir="auto">-one</p>
+<p dir="auto">2.two</p>
 ````````````````````````````````
 
 
@@ -4588,7 +4588,7 @@ one blank line.
 
   bar
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 <p>bar</p>
@@ -4610,7 +4610,7 @@ A list item may contain any kind of block:
 
     > bam
 .
-<ol>
+<ol dir="auto">
 <li>
 <p>foo</p>
 <pre><code>bar
@@ -4635,7 +4635,7 @@ empty lines within the code block verbatim.
 
       baz
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>Foo</p>
 <pre><code>bar
@@ -4652,7 +4652,7 @@ Note that ordered list start numbers must be nine digits or less:
 ```````````````````````````````` example
 123456789. ok
 .
-<ol start="123456789">
+<ol start="123456789" dir="auto">
 <li>ok</li>
 </ol>
 ````````````````````````````````
@@ -4661,7 +4661,7 @@ Note that ordered list start numbers must be nine digits or less:
 ```````````````````````````````` example
 1234567890. not ok
 .
-<p>1234567890. not ok</p>
+<p dir="auto">1234567890. not ok</p>
 ````````````````````````````````
 
 
@@ -4670,7 +4670,7 @@ A start number may begin with 0s:
 ```````````````````````````````` example
 0. ok
 .
-<ol start="0">
+<ol start="0" dir="auto">
 <li>ok</li>
 </ol>
 ````````````````````````````````
@@ -4679,7 +4679,7 @@ A start number may begin with 0s:
 ```````````````````````````````` example
 003. ok
 .
-<ol start="3">
+<ol start="3" dir="auto">
 <li>ok</li>
 </ol>
 ````````````````````````````````
@@ -4690,7 +4690,7 @@ A start number may not be negative:
 ```````````````````````````````` example
 -1. not ok
 .
-<p>-1. not ok</p>
+<p dir="auto">-1. not ok</p>
 ````````````````````````````````
 
 
@@ -4715,7 +4715,7 @@ In the following case that is 6 spaces:
 
       bar
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 <pre><code>bar
@@ -4732,7 +4732,7 @@ And in this case it is 11 spaces:
 
            bar
 .
-<ol start="10">
+<ol start="10" dir="auto">
 <li>
 <p>foo</p>
 <pre><code>bar
@@ -4755,7 +4755,7 @@ paragraph
 .
 <pre><code>indented code
 </code></pre>
-<p>paragraph</p>
+<p dir="auto">paragraph</p>
 <pre><code>more code
 </code></pre>
 ````````````````````````````````
@@ -4768,7 +4768,7 @@ paragraph
 
        more code
 .
-<ol>
+<ol dir="auto">
 <li>
 <pre><code>indented code
 </code></pre>
@@ -4790,7 +4790,7 @@ inside the code block:
 
        more code
 .
-<ol>
+<ol dir="auto">
 <li>
 <pre><code> indented code
 </code></pre>
@@ -4815,8 +4815,8 @@ indenting the whole thing and prepending a list marker:
 
 bar
 .
-<p>foo</p>
-<p>bar</p>
+<p dir="auto">foo</p>
+<p dir="auto">bar</p>
 ````````````````````````````````
 
 
@@ -4825,10 +4825,10 @@ bar
 
   bar
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 </ul>
-<p>bar</p>
+<p dir="auto">bar</p>
 ````````````````````````````````
 
 
@@ -4842,7 +4842,7 @@ the above case:
 
    bar
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 <p>bar</p>
@@ -4874,7 +4874,7 @@ Here are some list items that start with a blank line but are not empty:
 -
       baz
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 <li>
 <pre><code>bar
@@ -4894,7 +4894,7 @@ following the list marker doesn't change the required indentation:
 -   
   foo
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 </ul>
 ````````````````````````````````
@@ -4909,10 +4909,10 @@ item:
 
   foo
 .
-<ul>
+<ul dir="auto">
 <li></li>
 </ul>
-<p>foo</p>
+<p dir="auto">foo</p>
 ````````````````````````````````
 
 
@@ -4923,7 +4923,7 @@ Here is an empty bullet list item:
 -
 - bar
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 <li></li>
 <li>bar</li>
@@ -4938,7 +4938,7 @@ It does not matter whether there are spaces or tabs following the [list marker]:
 -   
 - bar
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 <li></li>
 <li>bar</li>
@@ -4953,7 +4953,7 @@ Here is an empty ordered list item:
 2.
 3. bar
 .
-<ol>
+<ol dir="auto">
 <li>foo</li>
 <li></li>
 <li>bar</li>
@@ -4966,7 +4966,7 @@ A list may start or end with an empty list item:
 ```````````````````````````````` example
 *
 .
-<ul>
+<ul dir="auto">
 <li></li>
 </ul>
 ````````````````````````````````
@@ -4980,9 +4980,9 @@ foo
 foo
 1.
 .
-<p>foo
+<p dir="auto">foo
 *</p>
-<p>foo
+<p dir="auto">foo
 1.</p>
 ````````````````````````````````
 
@@ -5003,7 +5003,7 @@ Indented one space:
 
      > A block quote.
 .
-<ol>
+<ol dir="auto">
 <li>
 <p>A paragraph
 with two lines.</p>
@@ -5027,7 +5027,7 @@ Indented two spaces:
 
       > A block quote.
 .
-<ol>
+<ol dir="auto">
 <li>
 <p>A paragraph
 with two lines.</p>
@@ -5051,7 +5051,7 @@ Indented three spaces:
 
        > A block quote.
 .
-<ol>
+<ol dir="auto">
 <li>
 <p>A paragraph
 with two lines.</p>
@@ -5105,7 +5105,7 @@ with two lines.
 
       > A block quote.
 .
-<ol>
+<ol dir="auto">
 <li>
 <p>A paragraph
 with two lines.</p>
@@ -5125,7 +5125,7 @@ Indentation can be partially deleted:
   1.  A paragraph
     with two lines.
 .
-<ol>
+<ol dir="auto">
 <li>A paragraph
 with two lines.</li>
 </ol>
@@ -5138,7 +5138,7 @@ These examples show how laziness can work in nested structures:
 > 1. > Blockquote
 continued here.
 .
-<blockquote>
+<blockquote dir="auto">
 <ol>
 <li>
 <blockquote>
@@ -5155,7 +5155,7 @@ continued here.</p>
 > 1. > Blockquote
 > continued here.
 .
-<blockquote>
+<blockquote dir="auto">
 <ol>
 <li>
 <blockquote>
@@ -5185,7 +5185,7 @@ So, in this case we need two spaces indent:
     - baz
       - boo
 .
-<ul>
+<ul dir="auto">
 <li>foo
 <ul>
 <li>bar
@@ -5211,7 +5211,7 @@ One is not enough:
   - baz
    - boo
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 <li>bar</li>
 <li>baz</li>
@@ -5226,7 +5226,7 @@ Here we need four, because the list marker is wider:
 10) foo
     - bar
 .
-<ol start="10">
+<ol start="10" dir="auto">
 <li>foo
 <ul>
 <li>bar</li>
@@ -5242,10 +5242,10 @@ Three is not enough:
 10) foo
    - bar
 .
-<ol start="10">
+<ol start="10" dir="auto">
 <li>foo</li>
 </ol>
-<ul>
+<ul dir="auto">
 <li>bar</li>
 </ul>
 ````````````````````````````````
@@ -5256,7 +5256,7 @@ A list may be the first block in a list item:
 ```````````````````````````````` example
 - - foo
 .
-<ul>
+<ul dir="auto">
 <li>
 <ul>
 <li>foo</li>
@@ -5269,7 +5269,7 @@ A list may be the first block in a list item:
 ```````````````````````````````` example
 1. - 2. foo
 .
-<ol>
+<ol dir="auto">
 <li>
 <ul>
 <li>
@@ -5291,7 +5291,7 @@ A list item can contain a heading:
   ---
   baz
 .
-<ul>
+<ul dir="auto">
 <li>
 <h1>Foo</h1>
 </li>
@@ -5380,11 +5380,11 @@ unnatural. It is quite unintuitive that
 should be parsed as two lists with an intervening paragraph,
 
 ``` html
-<ul>
+<ul dir="auto">
 <li>foo</li>
 </ul>
-<p>bar</p>
-<ul>
+<p dir="auto">bar</p>
+<ul dir="auto">
 <li>baz</li>
 </ul>
 ```
@@ -5392,7 +5392,7 @@ should be parsed as two lists with an intervening paragraph,
 as the four-space rule demands, rather than a single list,
 
 ``` html
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 <p>bar</p>
@@ -5421,7 +5421,7 @@ original list marker to be included in the list item. For example,
 as a single list item, with `two` a continuation paragraph:
 
 ``` html
-<ul>
+<ul dir="auto">
 <li>
 <p>one</p>
 <p>two</p>
@@ -5440,7 +5440,7 @@ and similarly
 as
 
 ``` html
-<blockquote>
+<blockquote dir="auto">
 <ul>
 <li>
 <p>one</p>
@@ -5518,7 +5518,7 @@ the final rendered document.
 - [ ] foo
 - [x] bar
 .
-<ul>
+<ul dir="auto">
 <li><input disabled="" type="checkbox"> foo</li>
 <li><input checked="" disabled="" type="checkbox"> bar</li>
 </ul>
@@ -5532,7 +5532,7 @@ Task lists can be arbitrarily nested:
   - [x] baz
 - [ ] bim
 .
-<ul>
+<ul dir="auto">
 <li><input checked="" disabled="" type="checkbox"> foo
 <ul>
 <li><input disabled="" type="checkbox"> bar</li>
@@ -5583,11 +5583,11 @@ Changing the bullet or ordered list delimiter starts a new list:
 - bar
 + baz
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 <li>bar</li>
 </ul>
-<ul>
+<ul dir="auto">
 <li>baz</li>
 </ul>
 ````````````````````````````````
@@ -5598,11 +5598,11 @@ Changing the bullet or ordered list delimiter starts a new list:
 2. bar
 3) baz
 .
-<ol>
+<ol dir="auto">
 <li>foo</li>
 <li>bar</li>
 </ol>
-<ol start="3">
+<ol start="3" dir="auto">
 <li>baz</li>
 </ol>
 ````````````````````````````````
@@ -5617,8 +5617,8 @@ Foo
 - bar
 - baz
 .
-<p>Foo</p>
-<ul>
+<p dir="auto">Foo</p>
+<ul dir="auto">
 <li>bar</li>
 <li>baz</li>
 </ul>
@@ -5693,7 +5693,7 @@ interrupt paragraphs.  Thus,
 The number of windows in my house is
 14.  The number of doors is 6.
 .
-<p>The number of windows in my house is
+<p dir="auto">The number of windows in my house is
 14.  The number of doors is 6.</p>
 ````````````````````````````````
 
@@ -5703,8 +5703,8 @@ We may still get an unintended result in cases like
 The number of windows in my house is
 1.  The number of doors is 6.
 .
-<p>The number of windows in my house is</p>
-<ol>
+<p dir="auto">The number of windows in my house is</p>
+<ol dir="auto">
 <li>The number of doors is 6.</li>
 </ol>
 ````````````````````````````````
@@ -5721,7 +5721,7 @@ There can be any number of blank lines between items:
 
 - baz
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 </li>
@@ -5742,7 +5742,7 @@ There can be any number of blank lines between items:
 
       bim
 .
-<ul>
+<ul dir="auto">
 <li>foo
 <ul>
 <li>bar
@@ -5773,12 +5773,12 @@ comment:
 - baz
 - bim
 .
-<ul>
+<ul dir="auto">
 <li>foo</li>
 <li>bar</li>
 </ul>
 <!-- -->
-<ul>
+<ul dir="auto">
 <li>baz</li>
 <li>bim</li>
 </ul>
@@ -5796,7 +5796,7 @@ comment:
 
     code
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 <p>notcode</p>
@@ -5825,7 +5825,7 @@ item:
  - f
 - g
 .
-<ul>
+<ul dir="auto">
 <li>a</li>
 <li>b</li>
 <li>c</li>
@@ -5844,7 +5844,7 @@ item:
 
    3. c
 .
-<ol>
+<ol dir="auto">
 <li>
 <p>a</p>
 </li>
@@ -5868,7 +5868,7 @@ line, because it is indented more than three spaces:
    - d
     - e
 .
-<ul>
+<ul dir="auto">
 <li>a</li>
 <li>b</li>
 <li>c</li>
@@ -5888,7 +5888,7 @@ blank line.
 
     3. c
 .
-<ol>
+<ol dir="auto">
 <li>
 <p>a</p>
 </li>
@@ -5910,7 +5910,7 @@ two of the list items:
 
 - c
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>a</p>
 </li>
@@ -5932,7 +5932,7 @@ So is this, with a empty second item:
 
 * c
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>a</p>
 </li>
@@ -5955,7 +5955,7 @@ with a blank line between them:
   c
 - d
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>a</p>
 </li>
@@ -5977,7 +5977,7 @@ with a blank line between them:
   [ref]: /url
 - d
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>a</p>
 </li>
@@ -6002,7 +6002,7 @@ This is a tight list, because the blank lines are in a code block:
   ```
 - c
 .
-<ul>
+<ul dir="auto">
 <li>a</li>
 <li>
 <pre><code>b
@@ -6026,7 +6026,7 @@ the outer list is tight:
     c
 - d
 .
-<ul>
+<ul dir="auto">
 <li>a
 <ul>
 <li>
@@ -6049,7 +6049,7 @@ block quote:
   >
 * c
 .
-<ul>
+<ul dir="auto">
 <li>a
 <blockquote>
 <p>b</p>
@@ -6071,7 +6071,7 @@ are not separated by blank lines:
   ```
 - d
 .
-<ul>
+<ul dir="auto">
 <li>a
 <blockquote>
 <p>b</p>
@@ -6089,7 +6089,7 @@ A single-paragraph list is tight:
 ```````````````````````````````` example
 - a
 .
-<ul>
+<ul dir="auto">
 <li>a</li>
 </ul>
 ````````````````````````````````
@@ -6099,7 +6099,7 @@ A single-paragraph list is tight:
 - a
   - b
 .
-<ul>
+<ul dir="auto">
 <li>a
 <ul>
 <li>b</li>
@@ -6119,7 +6119,7 @@ two block elements in the list item:
 
    bar
 .
-<ol>
+<ol dir="auto">
 <li>
 <pre><code>foo
 </code></pre>
@@ -6137,7 +6137,7 @@ Here the outer list is loose, the inner list tight:
 
   baz
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>foo</p>
 <ul>
@@ -6158,7 +6158,7 @@ Here the outer list is loose, the inner list tight:
   - e
   - f
 .
-<ul>
+<ul dir="auto">
 <li>
 <p>a</p>
 <ul>
@@ -6186,7 +6186,7 @@ Thus, for example, in
 ```````````````````````````````` example
 `hi`lo`
 .
-<p><code>hi</code>lo`</p>
+<p dir="auto"><code>hi</code>lo`</p>
 ````````````````````````````````
 
 `hi` is parsed as code, leaving the backtick at the end as a literal
@@ -6218,7 +6218,7 @@ This is a simple code span:
 ```````````````````````````````` example
 `foo`
 .
-<p><code>foo</code></p>
+<p dir="auto"><code>foo</code></p>
 ````````````````````````````````
 
 
@@ -6229,7 +6229,7 @@ trailing space:
 ```````````````````````````````` example
 `` foo ` bar ``
 .
-<p><code>foo ` bar</code></p>
+<p dir="auto"><code>foo ` bar</code></p>
 ````````````````````````````````
 
 
@@ -6239,7 +6239,7 @@ spaces:
 ```````````````````````````````` example
 ` `` `
 .
-<p><code>``</code></p>
+<p dir="auto"><code>``</code></p>
 ````````````````````````````````
 
 Note that only *one* space is stripped:
@@ -6247,7 +6247,7 @@ Note that only *one* space is stripped:
 ```````````````````````````````` example
 `  ``  `
 .
-<p><code> `` </code></p>
+<p dir="auto"><code> `` </code></p>
 ````````````````````````````````
 
 The stripping only happens if the space is on both
@@ -6256,16 +6256,16 @@ sides of the string:
 ```````````````````````````````` example
 ` a`
 .
-<p><code> a</code></p>
+<p dir="auto"><code> a</code></p>
 ````````````````````````````````
 
 Only [spaces], and not [unicode whitespace] in general, are
 stripped in this way:
 
 ```````````````````````````````` example
-` b `
+` b `
 .
-<p><code> b </code></p>
+<p dir="auto"><code> b </code></p>
 ````````````````````````````````
 
 No stripping occurs if the code span contains only spaces:
@@ -6274,7 +6274,7 @@ No stripping occurs if the code span contains only spaces:
 ` `
 `  `
 .
-<p><code> </code>
+<p dir="auto"><code> </code>
 <code>  </code></p>
 ````````````````````````````````
 
@@ -6288,7 +6288,7 @@ bar
 baz
 ``
 .
-<p><code>foo bar   baz</code></p>
+<p dir="auto"><code>foo bar   baz</code></p>
 ````````````````````````````````
 
 ```````````````````````````````` example
@@ -6296,7 +6296,7 @@ baz
 foo 
 ``
 .
-<p><code>foo </code></p>
+<p dir="auto"><code>foo </code></p>
 ````````````````````````````````
 
 
@@ -6306,7 +6306,7 @@ Interior spaces are not collapsed:
 `foo   bar 
 baz`
 .
-<p><code>foo   bar  baz</code></p>
+<p dir="auto"><code>foo   bar  baz</code></p>
 ````````````````````````````````
 
 Note that browsers will typically collapse consecutive spaces
@@ -6322,7 +6322,7 @@ are treated literally:
 ```````````````````````````````` example
 `foo\`bar`
 .
-<p><code>foo\</code>bar`</p>
+<p dir="auto"><code>foo\</code>bar`</p>
 ````````````````````````````````
 
 
@@ -6333,13 +6333,13 @@ not contain any strings of exactly *n* backtick characters.
 ```````````````````````````````` example
 ``foo`bar``
 .
-<p><code>foo`bar</code></p>
+<p dir="auto"><code>foo`bar</code></p>
 ````````````````````````````````
 
 ```````````````````````````````` example
 ` foo `` bar `
 .
-<p><code>foo `` bar</code></p>
+<p dir="auto"><code>foo `` bar</code></p>
 ````````````````````````````````
 
 
@@ -6351,7 +6351,7 @@ span:
 ```````````````````````````````` example
 *foo`*`
 .
-<p>*foo<code>*</code></p>
+<p dir="auto">*foo<code>*</code></p>
 ````````````````````````````````
 
 
@@ -6360,7 +6360,7 @@ And this is not parsed as a link:
 ```````````````````````````````` example
 [not a `link](/foo`)
 .
-<p>[not a <code>link](/foo</code>)</p>
+<p dir="auto">[not a <code>link](/foo</code>)</p>
 ````````````````````````````````
 
 
@@ -6370,7 +6370,7 @@ Thus, this is code:
 ```````````````````````````````` example
 `<a href="`">`
 .
-<p><code>&lt;a href=&quot;</code>&quot;&gt;`</p>
+<p dir="auto"><code>&lt;a href=&quot;</code>&quot;&gt;`</p>
 ````````````````````````````````
 
 
@@ -6379,7 +6379,7 @@ But this is an HTML tag:
 ```````````````````````````````` example
 <a href="`">`
 .
-<p><a href="`">`</p>
+<p dir="auto"><a href="`">`</p>
 ````````````````````````````````
 
 
@@ -6388,7 +6388,7 @@ And this is code:
 ```````````````````````````````` example
 `<http://foo.bar.`baz>`
 .
-<p><code>&lt;http://foo.bar.</code>baz&gt;`</p>
+<p dir="auto"><code>&lt;http://foo.bar.</code>baz&gt;`</p>
 ````````````````````````````````
 
 
@@ -6397,7 +6397,7 @@ But this is an autolink:
 ```````````````````````````````` example
 <http://foo.bar.`baz>`
 .
-<p><a href="http://foo.bar.%60baz">http://foo.bar.`baz</a>`</p>
+<p dir="auto"><a href="http://foo.bar.%60baz">http://foo.bar.`baz</a>`</p>
 ````````````````````````````````
 
 
@@ -6407,14 +6407,14 @@ we just have literal backticks:
 ```````````````````````````````` example
 ```foo``
 .
-<p>```foo``</p>
+<p dir="auto">```foo``</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 `foo
 .
-<p>`foo</p>
+<p dir="auto">`foo</p>
 ````````````````````````````````
 
 The following case also illustrates the need for opening and
@@ -6423,7 +6423,7 @@ closing backtick strings to be equal in length:
 ```````````````````````````````` example
 `foo``bar``
 .
-<p>`foo<code>bar</code></p>
+<p dir="auto">`foo<code>bar</code></p>
 ````````````````````````````````
 
 
@@ -6640,7 +6640,7 @@ Rule 1:
 ```````````````````````````````` example
 *foo bar*
 .
-<p><em>foo bar</em></p>
+<p dir="auto"><em>foo bar</em></p>
 ````````````````````````````````
 
 
@@ -6650,7 +6650,7 @@ whitespace, and hence not part of a [left-flanking delimiter run]:
 ```````````````````````````````` example
 a * foo bar*
 .
-<p>a * foo bar*</p>
+<p dir="auto">a * foo bar*</p>
 ````````````````````````````````
 
 
@@ -6661,16 +6661,16 @@ not part of a [left-flanking delimiter run]:
 ```````````````````````````````` example
 a*"foo"*
 .
-<p>a*&quot;foo&quot;*</p>
+<p dir="auto">a*&quot;foo&quot;*</p>
 ````````````````````````````````
 
 
 Unicode nonbreaking spaces count as whitespace, too:
 
 ```````````````````````````````` example
-* a *
+* a *
 .
-<p>* a *</p>
+<p dir="auto">* a *</p>
 ````````````````````````````````
 
 
@@ -6679,14 +6679,14 @@ Intraword emphasis with `*` is permitted:
 ```````````````````````````````` example
 foo*bar*
 .
-<p>foo<em>bar</em></p>
+<p dir="auto">foo<em>bar</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 5*6*78
 .
-<p>5<em>6</em>78</p>
+<p dir="auto">5<em>6</em>78</p>
 ````````````````````````````````
 
 
@@ -6695,7 +6695,7 @@ Rule 2:
 ```````````````````````````````` example
 _foo bar_
 .
-<p><em>foo bar</em></p>
+<p dir="auto"><em>foo bar</em></p>
 ````````````````````````````````
 
 
@@ -6705,7 +6705,7 @@ whitespace:
 ```````````````````````````````` example
 _ foo bar_
 .
-<p>_ foo bar_</p>
+<p dir="auto">_ foo bar_</p>
 ````````````````````````````````
 
 
@@ -6715,7 +6715,7 @@ by an alphanumeric and followed by punctuation:
 ```````````````````````````````` example
 a_"foo"_
 .
-<p>a_&quot;foo&quot;_</p>
+<p dir="auto">a_&quot;foo&quot;_</p>
 ````````````````````````````````
 
 
@@ -6724,21 +6724,21 @@ Emphasis with `_` is not allowed inside words:
 ```````````````````````````````` example
 foo_bar_
 .
-<p>foo_bar_</p>
+<p dir="auto">foo_bar_</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 5_6_78
 .
-<p>5_6_78</p>
+<p dir="auto">5_6_78</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 пристаням_стремятся_
 .
-<p>пристаням_стремятся_</p>
+<p dir="auto">пристаням_стремятся_</p>
 ````````````````````````````````
 
 
@@ -6748,7 +6748,7 @@ is right-flanking and the second left-flanking:
 ```````````````````````````````` example
 aa_"bb"_cc
 .
-<p>aa_&quot;bb&quot;_cc</p>
+<p dir="auto">aa_&quot;bb&quot;_cc</p>
 ````````````````````````````````
 
 
@@ -6759,7 +6759,7 @@ punctuation:
 ```````````````````````````````` example
 foo-_(bar)_
 .
-<p>foo-<em>(bar)</em></p>
+<p dir="auto">foo-<em>(bar)</em></p>
 ````````````````````````````````
 
 
@@ -6771,7 +6771,7 @@ not match the opening delimiter:
 ```````````````````````````````` example
 _foo*
 .
-<p>_foo*</p>
+<p dir="auto">_foo*</p>
 ````````````````````````````````
 
 
@@ -6781,7 +6781,7 @@ whitespace:
 ```````````````````````````````` example
 *foo bar *
 .
-<p>*foo bar *</p>
+<p dir="auto">*foo bar *</p>
 ````````````````````````````````
 
 
@@ -6791,7 +6791,7 @@ A line ending also counts as whitespace:
 *foo bar
 *
 .
-<p>*foo bar
+<p dir="auto">*foo bar
 *</p>
 ````````````````````````````````
 
@@ -6803,7 +6803,7 @@ preceded by punctuation and followed by an alphanumeric
 ```````````````````````````````` example
 *(*foo)
 .
-<p>*(*foo)</p>
+<p dir="auto">*(*foo)</p>
 ````````````````````````````````
 
 
@@ -6813,7 +6813,7 @@ with this example:
 ```````````````````````````````` example
 *(*foo*)*
 .
-<p><em>(<em>foo</em>)</em></p>
+<p dir="auto"><em>(<em>foo</em>)</em></p>
 ````````````````````````````````
 
 
@@ -6822,7 +6822,7 @@ Intraword emphasis with `*` is allowed:
 ```````````````````````````````` example
 *foo*bar
 .
-<p><em>foo</em>bar</p>
+<p dir="auto"><em>foo</em>bar</p>
 ````````````````````````````````
 
 
@@ -6835,7 +6835,7 @@ whitespace:
 ```````````````````````````````` example
 _foo bar _
 .
-<p>_foo bar _</p>
+<p dir="auto">_foo bar _</p>
 ````````````````````````````````
 
 
@@ -6845,7 +6845,7 @@ preceded by punctuation and followed by an alphanumeric:
 ```````````````````````````````` example
 _(_foo)
 .
-<p>_(_foo)</p>
+<p dir="auto">_(_foo)</p>
 ````````````````````````````````
 
 
@@ -6854,7 +6854,7 @@ This is emphasis within emphasis:
 ```````````````````````````````` example
 _(_foo_)_
 .
-<p><em>(<em>foo</em>)</em></p>
+<p dir="auto"><em>(<em>foo</em>)</em></p>
 ````````````````````````````````
 
 
@@ -6863,21 +6863,21 @@ Intraword emphasis is disallowed for `_`:
 ```````````````````````````````` example
 _foo_bar
 .
-<p>_foo_bar</p>
+<p dir="auto">_foo_bar</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 _пристаням_стремятся
 .
-<p>_пристаням_стремятся</p>
+<p dir="auto">_пристаням_стремятся</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 _foo_bar_baz_
 .
-<p><em>foo_bar_baz</em></p>
+<p dir="auto"><em>foo_bar_baz</em></p>
 ````````````````````````````````
 
 
@@ -6888,7 +6888,7 @@ punctuation:
 ```````````````````````````````` example
 _(bar)_.
 .
-<p><em>(bar)</em>.</p>
+<p dir="auto"><em>(bar)</em>.</p>
 ````````````````````````````````
 
 
@@ -6897,7 +6897,7 @@ Rule 5:
 ```````````````````````````````` example
 **foo bar**
 .
-<p><strong>foo bar</strong></p>
+<p dir="auto"><strong>foo bar</strong></p>
 ````````````````````````````````
 
 
@@ -6907,7 +6907,7 @@ followed by whitespace:
 ```````````````````````````````` example
 ** foo bar**
 .
-<p>** foo bar**</p>
+<p dir="auto">** foo bar**</p>
 ````````````````````````````````
 
 
@@ -6918,7 +6918,7 @@ not part of a [left-flanking delimiter run]:
 ```````````````````````````````` example
 a**"foo"**
 .
-<p>a**&quot;foo&quot;**</p>
+<p dir="auto">a**&quot;foo&quot;**</p>
 ````````````````````````````````
 
 
@@ -6927,7 +6927,7 @@ Intraword strong emphasis with `**` is permitted:
 ```````````````````````````````` example
 foo**bar**
 .
-<p>foo<strong>bar</strong></p>
+<p dir="auto">foo<strong>bar</strong></p>
 ````````````````````````````````
 
 
@@ -6936,7 +6936,7 @@ Rule 6:
 ```````````````````````````````` example
 __foo bar__
 .
-<p><strong>foo bar</strong></p>
+<p dir="auto"><strong>foo bar</strong></p>
 ````````````````````````````````
 
 
@@ -6946,7 +6946,7 @@ followed by whitespace:
 ```````````````````````````````` example
 __ foo bar__
 .
-<p>__ foo bar__</p>
+<p dir="auto">__ foo bar__</p>
 ````````````````````````````````
 
 
@@ -6955,7 +6955,7 @@ A line ending counts as whitespace:
 __
 foo bar__
 .
-<p>__
+<p dir="auto">__
 foo bar__</p>
 ````````````````````````````````
 
@@ -6966,7 +6966,7 @@ by an alphanumeric and followed by punctuation:
 ```````````````````````````````` example
 a__"foo"__
 .
-<p>a__&quot;foo&quot;__</p>
+<p dir="auto">a__&quot;foo&quot;__</p>
 ````````````````````````````````
 
 
@@ -6975,28 +6975,28 @@ Intraword strong emphasis is forbidden with `__`:
 ```````````````````````````````` example
 foo__bar__
 .
-<p>foo__bar__</p>
+<p dir="auto">foo__bar__</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 5__6__78
 .
-<p>5__6__78</p>
+<p dir="auto">5__6__78</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 пристаням__стремятся__
 .
-<p>пристаням__стремятся__</p>
+<p dir="auto">пристаням__стремятся__</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __foo, __bar__, baz__
 .
-<p><strong>foo, <strong>bar</strong>, baz</strong></p>
+<p dir="auto"><strong>foo, <strong>bar</strong>, baz</strong></p>
 ````````````````````````````````
 
 
@@ -7007,7 +7007,7 @@ punctuation:
 ```````````````````````````````` example
 foo-__(bar)__
 .
-<p>foo-<strong>(bar)</strong></p>
+<p dir="auto">foo-<strong>(bar)</strong></p>
 ````````````````````````````````
 
 
@@ -7020,7 +7020,7 @@ by whitespace:
 ```````````````````````````````` example
 **foo bar **
 .
-<p>**foo bar **</p>
+<p dir="auto">**foo bar **</p>
 ````````````````````````````````
 
 
@@ -7033,7 +7033,7 @@ preceded by punctuation and followed by an alphanumeric:
 ```````````````````````````````` example
 **(**foo)
 .
-<p>**(**foo)</p>
+<p dir="auto">**(**foo)</p>
 ````````````````````````````````
 
 
@@ -7043,7 +7043,7 @@ with these examples:
 ```````````````````````````````` example
 *(**foo**)*
 .
-<p><em>(<strong>foo</strong>)</em></p>
+<p dir="auto"><em>(<strong>foo</strong>)</em></p>
 ````````````````````````````````
 
 
@@ -7051,7 +7051,7 @@ with these examples:
 **Gomphocarpus (*Gomphocarpus physocarpus*, syn.
 *Asclepias physocarpa*)**
 .
-<p><strong>Gomphocarpus (<em>Gomphocarpus physocarpus</em>, syn.
+<p dir="auto"><strong>Gomphocarpus (<em>Gomphocarpus physocarpus</em>, syn.
 <em>Asclepias physocarpa</em>)</strong></p>
 ````````````````````````````````
 
@@ -7059,7 +7059,7 @@ with these examples:
 ```````````````````````````````` example
 **foo "*bar*" foo**
 .
-<p><strong>foo &quot;<em>bar</em>&quot; foo</strong></p>
+<p dir="auto"><strong>foo &quot;<em>bar</em>&quot; foo</strong></p>
 ````````````````````````````````
 
 
@@ -7068,7 +7068,7 @@ Intraword emphasis:
 ```````````````````````````````` example
 **foo**bar
 .
-<p><strong>foo</strong>bar</p>
+<p dir="auto"><strong>foo</strong>bar</p>
 ````````````````````````````````
 
 
@@ -7080,7 +7080,7 @@ preceded by whitespace:
 ```````````````````````````````` example
 __foo bar __
 .
-<p>__foo bar __</p>
+<p dir="auto">__foo bar __</p>
 ````````````````````````````````
 
 
@@ -7090,7 +7090,7 @@ preceded by punctuation and followed by an alphanumeric:
 ```````````````````````````````` example
 __(__foo)
 .
-<p>__(__foo)</p>
+<p dir="auto">__(__foo)</p>
 ````````````````````````````````
 
 
@@ -7100,7 +7100,7 @@ with this example:
 ```````````````````````````````` example
 _(__foo__)_
 .
-<p><em>(<strong>foo</strong>)</em></p>
+<p dir="auto"><em>(<strong>foo</strong>)</em></p>
 ````````````````````````````````
 
 
@@ -7109,21 +7109,21 @@ Intraword strong emphasis is forbidden with `__`:
 ```````````````````````````````` example
 __foo__bar
 .
-<p>__foo__bar</p>
+<p dir="auto">__foo__bar</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __пристаням__стремятся
 .
-<p>__пристаням__стремятся</p>
+<p dir="auto">__пристаням__стремятся</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __foo__bar__baz__
 .
-<p><strong>foo__bar__baz</strong></p>
+<p dir="auto"><strong>foo__bar__baz</strong></p>
 ````````````````````````````````
 
 
@@ -7134,7 +7134,7 @@ punctuation:
 ```````````````````````````````` example
 __(bar)__.
 .
-<p><strong>(bar)</strong>.</p>
+<p dir="auto"><strong>(bar)</strong>.</p>
 ````````````````````````````````
 
 
@@ -7146,7 +7146,7 @@ emphasized span.
 ```````````````````````````````` example
 *foo [bar](/url)*
 .
-<p><em>foo <a href="/url">bar</a></em></p>
+<p dir="auto"><em>foo <a href="/url">bar</a></em></p>
 ````````````````````````````````
 
 
@@ -7154,7 +7154,7 @@ emphasized span.
 *foo
 bar*
 .
-<p><em>foo
+<p dir="auto"><em>foo
 bar</em></p>
 ````````````````````````````````
 
@@ -7165,47 +7165,47 @@ inside emphasis:
 ```````````````````````````````` example
 _foo __bar__ baz_
 .
-<p><em>foo <strong>bar</strong> baz</em></p>
+<p dir="auto"><em>foo <strong>bar</strong> baz</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 _foo _bar_ baz_
 .
-<p><em>foo <em>bar</em> baz</em></p>
+<p dir="auto"><em>foo <em>bar</em> baz</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __foo_ bar_
 .
-<p><em><em>foo</em> bar</em></p>
+<p dir="auto"><em><em>foo</em> bar</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *foo *bar**
 .
-<p><em>foo <em>bar</em></em></p>
+<p dir="auto"><em>foo <em>bar</em></em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *foo **bar** baz*
 .
-<p><em>foo <strong>bar</strong> baz</em></p>
+<p dir="auto"><em>foo <strong>bar</strong> baz</em></p>
 ````````````````````````````````
 
 ```````````````````````````````` example
 *foo**bar**baz*
 .
-<p><em>foo<strong>bar</strong>baz</em></p>
+<p dir="auto"><em>foo<strong>bar</strong>baz</em></p>
 ````````````````````````````````
 
 Note that in the preceding case, the interpretation
 
 ``` markdown
-<p><em>foo</em><em>bar<em></em>baz</em></p>
+<p dir="auto"><em>foo</em><em>bar<em></em>baz</em></p>
 ```
 
 
@@ -7223,7 +7223,7 @@ emphasis sections in this example:
 ```````````````````````````````` example
 *foo**bar*
 .
-<p><em>foo**bar</em></p>
+<p dir="auto"><em>foo**bar</em></p>
 ````````````````````````````````
 
 
@@ -7236,21 +7236,21 @@ omitted:
 ```````````````````````````````` example
 ***foo** bar*
 .
-<p><em><strong>foo</strong> bar</em></p>
+<p dir="auto"><em><strong>foo</strong> bar</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *foo **bar***
 .
-<p><em>foo <strong>bar</strong></em></p>
+<p dir="auto"><em>foo <strong>bar</strong></em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *foo**bar***
 .
-<p><em>foo<strong>bar</strong></em></p>
+<p dir="auto"><em>foo<strong>bar</strong></em></p>
 ````````````````````````````````
 
 
@@ -7261,13 +7261,13 @@ they can match to create emphasis:
 ```````````````````````````````` example
 foo***bar***baz
 .
-<p>foo<em><strong>bar</strong></em>baz</p>
+<p dir="auto">foo<em><strong>bar</strong></em>baz</p>
 ````````````````````````````````
 
 ```````````````````````````````` example
 foo******bar*********baz
 .
-<p>foo<strong><strong><strong>bar</strong></strong></strong>***baz</p>
+<p dir="auto">foo<strong><strong><strong>bar</strong></strong></strong>***baz</p>
 ````````````````````````````````
 
 
@@ -7276,14 +7276,14 @@ Indefinite levels of nesting are possible:
 ```````````````````````````````` example
 *foo **bar *baz* bim** bop*
 .
-<p><em>foo <strong>bar <em>baz</em> bim</strong> bop</em></p>
+<p dir="auto"><em>foo <strong>bar <em>baz</em> bim</strong> bop</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *foo [*bar*](/url)*
 .
-<p><em>foo <a href="/url"><em>bar</em></a></em></p>
+<p dir="auto"><em>foo <a href="/url"><em>bar</em></a></em></p>
 ````````````````````````````````
 
 
@@ -7292,14 +7292,14 @@ There can be no empty emphasis or strong emphasis:
 ```````````````````````````````` example
 ** is not an empty emphasis
 .
-<p>** is not an empty emphasis</p>
+<p dir="auto">** is not an empty emphasis</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 **** is not an empty strong emphasis
 .
-<p>**** is not an empty strong emphasis</p>
+<p dir="auto">**** is not an empty strong emphasis</p>
 ````````````````````````````````
 
 
@@ -7312,7 +7312,7 @@ strongly emphasized span.
 ```````````````````````````````` example
 **foo [bar](/url)**
 .
-<p><strong>foo <a href="/url">bar</a></strong></p>
+<p dir="auto"><strong>foo <a href="/url">bar</a></strong></p>
 ````````````````````````````````
 
 
@@ -7320,7 +7320,7 @@ strongly emphasized span.
 **foo
 bar**
 .
-<p><strong>foo
+<p dir="auto"><strong>foo
 bar</strong></p>
 ````````````````````````````````
 
@@ -7331,56 +7331,56 @@ inside strong emphasis:
 ```````````````````````````````` example
 __foo _bar_ baz__
 .
-<p><strong>foo <em>bar</em> baz</strong></p>
+<p dir="auto"><strong>foo <em>bar</em> baz</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __foo __bar__ baz__
 .
-<p><strong>foo <strong>bar</strong> baz</strong></p>
+<p dir="auto"><strong>foo <strong>bar</strong> baz</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ____foo__ bar__
 .
-<p><strong><strong>foo</strong> bar</strong></p>
+<p dir="auto"><strong><strong>foo</strong> bar</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 **foo **bar****
 .
-<p><strong>foo <strong>bar</strong></strong></p>
+<p dir="auto"><strong>foo <strong>bar</strong></strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 **foo *bar* baz**
 .
-<p><strong>foo <em>bar</em> baz</strong></p>
+<p dir="auto"><strong>foo <em>bar</em> baz</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 **foo*bar*baz**
 .
-<p><strong>foo<em>bar</em>baz</strong></p>
+<p dir="auto"><strong>foo<em>bar</em>baz</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ***foo* bar**
 .
-<p><strong><em>foo</em> bar</strong></p>
+<p dir="auto"><strong><em>foo</em> bar</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 **foo *bar***
 .
-<p><strong>foo <em>bar</em></strong></p>
+<p dir="auto"><strong>foo <em>bar</em></strong></p>
 ````````````````````````````````
 
 
@@ -7390,7 +7390,7 @@ Indefinite levels of nesting are possible:
 **foo *bar **baz**
 bim* bop**
 .
-<p><strong>foo <em>bar <strong>baz</strong>
+<p dir="auto"><strong>foo <em>bar <strong>baz</strong>
 bim</em> bop</strong></p>
 ````````````````````````````````
 
@@ -7398,7 +7398,7 @@ bim</em> bop</strong></p>
 ```````````````````````````````` example
 **foo [*bar*](/url)**
 .
-<p><strong>foo <a href="/url"><em>bar</em></a></strong></p>
+<p dir="auto"><strong>foo <a href="/url"><em>bar</em></a></strong></p>
 ````````````````````````````````
 
 
@@ -7407,14 +7407,14 @@ There can be no empty emphasis or strong emphasis:
 ```````````````````````````````` example
 __ is not an empty emphasis
 .
-<p>__ is not an empty emphasis</p>
+<p dir="auto">__ is not an empty emphasis</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ____ is not an empty strong emphasis
 .
-<p>____ is not an empty strong emphasis</p>
+<p dir="auto">____ is not an empty strong emphasis</p>
 ````````````````````````````````
 
 
@@ -7424,42 +7424,42 @@ Rule 11:
 ```````````````````````````````` example
 foo ***
 .
-<p>foo ***</p>
+<p dir="auto">foo ***</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo *\**
 .
-<p>foo <em>*</em></p>
+<p dir="auto">foo <em>*</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo *_*
 .
-<p>foo <em>_</em></p>
+<p dir="auto">foo <em>_</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo *****
 .
-<p>foo *****</p>
+<p dir="auto">foo *****</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo **\***
 .
-<p>foo <strong>*</strong></p>
+<p dir="auto">foo <strong>*</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo **_**
 .
-<p>foo <strong>_</strong></p>
+<p dir="auto">foo <strong>_</strong></p>
 ````````````````````````````````
 
 
@@ -7470,42 +7470,42 @@ emphasis, rather than inside it:
 ```````````````````````````````` example
 **foo*
 .
-<p>*<em>foo</em></p>
+<p dir="auto">*<em>foo</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *foo**
 .
-<p><em>foo</em>*</p>
+<p dir="auto"><em>foo</em>*</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ***foo**
 .
-<p>*<strong>foo</strong></p>
+<p dir="auto">*<strong>foo</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ****foo*
 .
-<p>***<em>foo</em></p>
+<p dir="auto">***<em>foo</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 **foo***
 .
-<p><strong>foo</strong>*</p>
+<p dir="auto"><strong>foo</strong>*</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *foo****
 .
-<p><em>foo</em>***</p>
+<p dir="auto"><em>foo</em>***</p>
 ````````````````````````````````
 
 
@@ -7515,49 +7515,49 @@ Rule 12:
 ```````````````````````````````` example
 foo ___
 .
-<p>foo ___</p>
+<p dir="auto">foo ___</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo _\__
 .
-<p>foo <em>_</em></p>
+<p dir="auto">foo <em>_</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo _*_
 .
-<p>foo <em>*</em></p>
+<p dir="auto">foo <em>*</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo _____
 .
-<p>foo _____</p>
+<p dir="auto">foo _____</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo __\___
 .
-<p>foo <strong>_</strong></p>
+<p dir="auto">foo <strong>_</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo __*__
 .
-<p>foo <strong>*</strong></p>
+<p dir="auto">foo <strong>*</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __foo_
 .
-<p>_<em>foo</em></p>
+<p dir="auto">_<em>foo</em></p>
 ````````````````````````````````
 
 
@@ -7568,35 +7568,35 @@ emphasis, rather than inside it:
 ```````````````````````````````` example
 _foo__
 .
-<p><em>foo</em>_</p>
+<p dir="auto"><em>foo</em>_</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ___foo__
 .
-<p>_<strong>foo</strong></p>
+<p dir="auto">_<strong>foo</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ____foo_
 .
-<p>___<em>foo</em></p>
+<p dir="auto">___<em>foo</em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __foo___
 .
-<p><strong>foo</strong>_</p>
+<p dir="auto"><strong>foo</strong>_</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 _foo____
 .
-<p><em>foo</em>___</p>
+<p dir="auto"><em>foo</em>___</p>
 ````````````````````````````````
 
 
@@ -7606,28 +7606,28 @@ emphasis, you must use different delimiters:
 ```````````````````````````````` example
 **foo**
 .
-<p><strong>foo</strong></p>
+<p dir="auto"><strong>foo</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *_foo_*
 .
-<p><em><em>foo</em></em></p>
+<p dir="auto"><em><em>foo</em></em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __foo__
 .
-<p><strong>foo</strong></p>
+<p dir="auto"><strong>foo</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 _*foo*_
 .
-<p><em><em>foo</em></em></p>
+<p dir="auto"><em><em>foo</em></em></p>
 ````````````````````````````````
 
 
@@ -7637,14 +7637,14 @@ switching delimiters:
 ```````````````````````````````` example
 ****foo****
 .
-<p><strong><strong>foo</strong></strong></p>
+<p dir="auto"><strong><strong>foo</strong></strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ____foo____
 .
-<p><strong><strong>foo</strong></strong></p>
+<p dir="auto"><strong><strong>foo</strong></strong></p>
 ````````````````````````````````
 
 
@@ -7655,7 +7655,7 @@ delimiters:
 ```````````````````````````````` example
 ******foo******
 .
-<p><strong><strong><strong>foo</strong></strong></strong></p>
+<p dir="auto"><strong><strong><strong>foo</strong></strong></strong></p>
 ````````````````````````````````
 
 
@@ -7664,14 +7664,14 @@ Rule 14:
 ```````````````````````````````` example
 ***foo***
 .
-<p><em><strong>foo</strong></em></p>
+<p dir="auto"><em><strong>foo</strong></em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 _____foo_____
 .
-<p><em><strong><strong>foo</strong></strong></em></p>
+<p dir="auto"><em><strong><strong>foo</strong></strong></em></p>
 ````````````````````````````````
 
 
@@ -7680,14 +7680,14 @@ Rule 15:
 ```````````````````````````````` example
 *foo _bar* baz_
 .
-<p><em>foo _bar</em> baz_</p>
+<p dir="auto"><em>foo _bar</em> baz_</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *foo __bar *baz bim__ bam*
 .
-<p><em>foo <strong>bar *baz bim</strong> bam</em></p>
+<p dir="auto"><em>foo <strong>bar *baz bim</strong> bam</em></p>
 ````````````````````````````````
 
 
@@ -7696,14 +7696,14 @@ Rule 16:
 ```````````````````````````````` example
 **foo **bar baz**
 .
-<p>**foo <strong>bar baz</strong></p>
+<p dir="auto">**foo <strong>bar baz</strong></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *foo *bar baz*
 .
-<p>*foo <em>bar baz</em></p>
+<p dir="auto">*foo <em>bar baz</em></p>
 ````````````````````````````````
 
 
@@ -7712,63 +7712,63 @@ Rule 17:
 ```````````````````````````````` example
 *[bar*](/url)
 .
-<p>*<a href="/url">bar*</a></p>
+<p dir="auto">*<a href="/url">bar*</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 _foo [bar_](/url)
 .
-<p>_foo <a href="/url">bar_</a></p>
+<p dir="auto">_foo <a href="/url">bar_</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *<img src="foo" title="*"/>
 .
-<p>*<img src="foo" title="*"/></p>
+<p dir="auto">*<img src="foo" title="*"/></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 **<a href="**">
 .
-<p>**<a href="**"></p>
+<p dir="auto">**<a href="**"></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __<a href="__">
 .
-<p>__<a href="__"></p>
+<p dir="auto">__<a href="__"></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 *a `*`*
 .
-<p><em>a <code>*</code></em></p>
+<p dir="auto"><em>a <code>*</code></em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 _a `_`_
 .
-<p><em>a <code>_</code></em></p>
+<p dir="auto"><em>a <code>_</code></em></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 **a<http://foo.bar/?q=**>
 .
-<p>**a<a href="http://foo.bar/?q=**">http://foo.bar/?q=**</a></p>
+<p dir="auto">**a<a href="http://foo.bar/?q=**">http://foo.bar/?q=**</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 __a<http://foo.bar/?q=__>
 .
-<p>__a<a href="http://foo.bar/?q=__">http://foo.bar/?q=__</a></p>
+<p dir="auto">__a<a href="http://foo.bar/?q=__">http://foo.bar/?q=__</a></p>
 ````````````````````````````````
 
 
@@ -7784,7 +7784,7 @@ Strikethrough text is any text wrapped in two tildes (`~`).
 ```````````````````````````````` example strikethrough
 ~~Hi~~ Hello, world!
 .
-<p><del>Hi</del> Hello, world!</p>
+<p dir="auto"><del>Hi</del> Hello, world!</p>
 ````````````````````````````````
 
 As with regular emphasis delimiters, a new paragraph will cause strikethrough
@@ -7795,8 +7795,8 @@ This ~~has a
 
 new paragraph~~.
 .
-<p>This ~~has a</p>
-<p>new paragraph~~.</p>
+<p dir="auto">This ~~has a</p>
+<p dir="auto">new paragraph~~.</p>
 ````````````````````````````````
 
 </div>
@@ -7884,7 +7884,7 @@ Here is a simple inline link:
 ```````````````````````````````` example
 [link](/uri "title")
 .
-<p><a href="/uri" title="title">link</a></p>
+<p dir="auto"><a href="/uri" title="title">link</a></p>
 ````````````````````````````````
 
 
@@ -7894,34 +7894,34 @@ the destination may be omitted:
 ```````````````````````````````` example
 [link](/uri)
 .
-<p><a href="/uri">link</a></p>
+<p dir="auto"><a href="/uri">link</a></p>
 ````````````````````````````````
 
 ```````````````````````````````` example
 [](./target.md)
 .
-<p><a href="./target.md"></a></p>
+<p dir="auto"><a href="./target.md"></a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [link]()
 .
-<p><a href="">link</a></p>
+<p dir="auto"><a href="">link</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [link](<>)
 .
-<p><a href="">link</a></p>
+<p dir="auto"><a href="">link</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 []()
 .
-<p><a href=""></a></p>
+<p dir="auto"><a href=""></a></p>
 ````````````````````````````````
 
 The destination can only contain spaces if it is
@@ -7930,13 +7930,13 @@ enclosed in pointy brackets:
 ```````````````````````````````` example
 [link](/my uri)
 .
-<p>[link](/my uri)</p>
+<p dir="auto">[link](/my uri)</p>
 ````````````````````````````````
 
 ```````````````````````````````` example
 [link](</my uri>)
 .
-<p><a href="/my%20uri">link</a></p>
+<p dir="auto"><a href="/my%20uri">link</a></p>
 ````````````````````````````````
 
 The destination cannot contain line endings,
@@ -7946,7 +7946,7 @@ even if enclosed in pointy brackets:
 [link](foo
 bar)
 .
-<p>[link](foo
+<p dir="auto">[link](foo
 bar)</p>
 ````````````````````````````````
 
@@ -7954,7 +7954,7 @@ bar)</p>
 [link](<foo
 bar>)
 .
-<p>[link](<foo
+<p dir="auto">[link](<foo
 bar>)</p>
 ````````````````````````````````
 
@@ -7964,7 +7964,7 @@ in pointy brackets:
 ```````````````````````````````` example
 [a](<b)c>)
 .
-<p><a href="b)c">a</a></p>
+<p dir="auto"><a href="b)c">a</a></p>
 ````````````````````````````````
 
 Pointy brackets that enclose links must be unescaped:
@@ -7972,7 +7972,7 @@ Pointy brackets that enclose links must be unescaped:
 ```````````````````````````````` example
 [link](<foo\>)
 .
-<p>[link](&lt;foo&gt;)</p>
+<p dir="auto">[link](&lt;foo&gt;)</p>
 ````````````````````````````````
 
 These are not links, because the opening pointy bracket
@@ -7983,7 +7983,7 @@ is not matched properly:
 [a](<b)c>
 [a](<b>c)
 .
-<p>[a](&lt;b)c
+<p dir="auto">[a](&lt;b)c
 [a](&lt;b)c&gt;
 [a](<b>c)</p>
 ````````````````````````````````
@@ -7993,7 +7993,7 @@ Parentheses inside the link destination may be escaped:
 ```````````````````````````````` example
 [link](\(foo\))
 .
-<p><a href="(foo)">link</a></p>
+<p dir="auto"><a href="(foo)">link</a></p>
 ````````````````````````````````
 
 Any number of parentheses are allowed without escaping, as long as they are
@@ -8002,7 +8002,7 @@ balanced:
 ```````````````````````````````` example
 [link](foo(and(bar)))
 .
-<p><a href="foo(and(bar))">link</a></p>
+<p dir="auto"><a href="foo(and(bar))">link</a></p>
 ````````````````````````````````
 
 However, if you have unbalanced parentheses, you need to escape or use the
@@ -8011,21 +8011,21 @@ However, if you have unbalanced parentheses, you need to escape or use the
 ```````````````````````````````` example
 [link](foo(and(bar))
 .
-<p>[link](foo(and(bar))</p>
+<p dir="auto">[link](foo(and(bar))</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [link](foo\(and\(bar\))
 .
-<p><a href="foo(and(bar)">link</a></p>
+<p dir="auto"><a href="foo(and(bar)">link</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [link](<foo(and(bar)>)
 .
-<p><a href="foo(and(bar)">link</a></p>
+<p dir="auto"><a href="foo(and(bar)">link</a></p>
 ````````````````````````````````
 
 
@@ -8035,7 +8035,7 @@ in Markdown:
 ```````````````````````````````` example
 [link](foo\)\:)
 .
-<p><a href="foo):">link</a></p>
+<p dir="auto"><a href="foo):">link</a></p>
 ````````````````````````````````
 
 
@@ -8048,9 +8048,9 @@ A link can contain fragment identifiers and queries:
 
 [link](http://example.com?foo=3#frag)
 .
-<p><a href="#fragment">link</a></p>
-<p><a href="http://example.com#fragment">link</a></p>
-<p><a href="http://example.com?foo=3#frag">link</a></p>
+<p dir="auto"><a href="#fragment">link</a></p>
+<p dir="auto"><a href="http://example.com#fragment">link</a></p>
+<p dir="auto"><a href="http://example.com?foo=3#frag">link</a></p>
 ````````````````````````````````
 
 
@@ -8060,7 +8060,7 @@ just a backslash:
 ```````````````````````````````` example
 [link](foo\bar)
 .
-<p><a href="foo%5Cbar">link</a></p>
+<p dir="auto"><a href="foo%5Cbar">link</a></p>
 ````````````````````````````````
 
 
@@ -8076,7 +8076,7 @@ about how to escape or normalize URLs in the output.
 ```````````````````````````````` example
 [link](foo%20b&auml;)
 .
-<p><a href="foo%20b%C3%A4">link</a></p>
+<p dir="auto"><a href="foo%20b%C3%A4">link</a></p>
 ````````````````````````````````
 
 
@@ -8087,7 +8087,7 @@ get unexpected results:
 ```````````````````````````````` example
 [link]("title")
 .
-<p><a href="%22title%22">link</a></p>
+<p dir="auto"><a href="%22title%22">link</a></p>
 ````````````````````````````````
 
 
@@ -8098,7 +8098,7 @@ Titles may be in single quotes, double quotes, or parentheses:
 [link](/url 'title')
 [link](/url (title))
 .
-<p><a href="/url" title="title">link</a>
+<p dir="auto"><a href="/url" title="title">link</a>
 <a href="/url" title="title">link</a>
 <a href="/url" title="title">link</a></p>
 ````````````````````````````````
@@ -8110,7 +8110,7 @@ may be used in titles:
 ```````````````````````````````` example
 [link](/url "title \"&quot;")
 .
-<p><a href="/url" title="title &quot;&quot;">link</a></p>
+<p dir="auto"><a href="/url" title="title &quot;&quot;">link</a></p>
 ````````````````````````````````
 
 
@@ -8119,9 +8119,9 @@ ending.
 Other [Unicode whitespace] like non-breaking space doesn't work.
 
 ```````````````````````````````` example
-[link](/url "title")
+[link](/url "title")
 .
-<p><a href="/url%C2%A0%22title%22">link</a></p>
+<p dir="auto"><a href="/url%C2%A0%22title%22">link</a></p>
 ````````````````````````````````
 
 
@@ -8130,7 +8130,7 @@ Nested balanced quotes are not allowed without escaping:
 ```````````````````````````````` example
 [link](/url "title "and" title")
 .
-<p>[link](/url &quot;title &quot;and&quot; title&quot;)</p>
+<p dir="auto">[link](/url &quot;title &quot;and&quot; title&quot;)</p>
 ````````````````````````````````
 
 
@@ -8139,7 +8139,7 @@ But it is easy to work around this by using a different quote type:
 ```````````````````````````````` example
 [link](/url 'title "and" title')
 .
-<p><a href="/url" title="title &quot;and&quot; title">link</a></p>
+<p dir="auto"><a href="/url" title="title &quot;and&quot; title">link</a></p>
 ````````````````````````````````
 
 
@@ -8165,7 +8165,7 @@ title:
 [link](   /uri
   "title"  )
 .
-<p><a href="/uri" title="title">link</a></p>
+<p dir="auto"><a href="/uri" title="title">link</a></p>
 ````````````````````````````````
 
 
@@ -8175,7 +8175,7 @@ following parenthesis:
 ```````````````````````````````` example
 [link] (/uri)
 .
-<p>[link] (/uri)</p>
+<p dir="auto">[link] (/uri)</p>
 ````````````````````````````````
 
 
@@ -8185,28 +8185,28 @@ unless they are escaped:
 ```````````````````````````````` example
 [link [foo [bar]]](/uri)
 .
-<p><a href="/uri">link [foo [bar]]</a></p>
+<p dir="auto"><a href="/uri">link [foo [bar]]</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [link] bar](/uri)
 .
-<p>[link] bar](/uri)</p>
+<p dir="auto">[link] bar](/uri)</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [link [bar](/uri)
 .
-<p>[link <a href="/uri">bar</a></p>
+<p dir="auto">[link <a href="/uri">bar</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [link \[bar](/uri)
 .
-<p><a href="/uri">link [bar</a></p>
+<p dir="auto"><a href="/uri">link [bar</a></p>
 ````````````````````````````````
 
 
@@ -8215,14 +8215,14 @@ The link text may contain inline content:
 ```````````````````````````````` example
 [link *foo **bar** `#`*](/uri)
 .
-<p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
+<p dir="auto"><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [![moon](moon.jpg)](/uri)
 .
-<p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
+<p dir="auto"><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
 ````````````````````````````````
 
 
@@ -8231,21 +8231,21 @@ However, links may not contain other links, at any level of nesting.
 ```````````````````````````````` example
 [foo [bar](/uri)](/uri)
 .
-<p>[foo <a href="/uri">bar</a>](/uri)</p>
+<p dir="auto">[foo <a href="/uri">bar</a>](/uri)</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [foo *[bar [baz](/uri)](/uri)*](/uri)
 .
-<p>[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
+<p dir="auto">[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ![[[foo](uri1)](uri2)](uri3)
 .
-<p><img src="uri3" alt="[foo](uri2)" /></p>
+<p dir="auto"><img src="uri3" alt="[foo](uri2)" /></p>
 ````````````````````````````````
 
 
@@ -8255,14 +8255,14 @@ emphasis grouping:
 ```````````````````````````````` example
 *[foo*](/uri)
 .
-<p>*<a href="/uri">foo*</a></p>
+<p dir="auto">*<a href="/uri">foo*</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [foo *bar](baz*)
 .
-<p><a href="baz*">foo *bar</a></p>
+<p dir="auto"><a href="baz*">foo *bar</a></p>
 ````````````````````````````````
 
 
@@ -8272,7 +8272,7 @@ precedence:
 ```````````````````````````````` example
 *foo [bar* baz]
 .
-<p><em>foo [bar</em> baz]</p>
+<p dir="auto"><em>foo [bar</em> baz]</p>
 ````````````````````````````````
 
 
@@ -8282,21 +8282,21 @@ and autolinks over link grouping:
 ```````````````````````````````` example
 [foo <bar attr="](baz)">
 .
-<p>[foo <bar attr="](baz)"></p>
+<p dir="auto">[foo <bar attr="](baz)"></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [foo`](/uri)`
 .
-<p>[foo<code>](/uri)</code></p>
+<p dir="auto">[foo<code>](/uri)</code></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 [foo<http://example.com/?search=](uri)>
 .
-<p>[foo<a href="http://example.com/?search=%5D(uri)">http://example.com/?search=](uri)</a></p>
+<p dir="auto">[foo<a href="http://example.com/?search=%5D(uri)">http://example.com/?search=](uri)</a></p>
 ````````````````````````````````
 
 
@@ -8336,7 +8336,7 @@ Here is a simple example:
 
 [bar]: /url "title"
 .
-<p><a href="/url" title="title">foo</a></p>
+<p dir="auto"><a href="/url" title="title">foo</a></p>
 ````````````````````````````````
 
 
@@ -8351,7 +8351,7 @@ unless they are escaped:
 
 [ref]: /uri
 .
-<p><a href="/uri">link [foo [bar]]</a></p>
+<p dir="auto"><a href="/uri">link [foo [bar]]</a></p>
 ````````````````````````````````
 
 
@@ -8360,7 +8360,7 @@ unless they are escaped:
 
 [ref]: /uri
 .
-<p><a href="/uri">link [bar</a></p>
+<p dir="auto"><a href="/uri">link [bar</a></p>
 ````````````````````````````````
 
 
@@ -8371,7 +8371,7 @@ The link text may contain inline content:
 
 [ref]: /uri
 .
-<p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
+<p dir="auto"><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
 ````````````````````````````````
 
 
@@ -8380,7 +8380,7 @@ The link text may contain inline content:
 
 [ref]: /uri
 .
-<p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
+<p dir="auto"><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
 ````````````````````````````````
 
 
@@ -8391,7 +8391,7 @@ However, links may not contain other links, at any level of nesting.
 
 [ref]: /uri
 .
-<p>[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
+<p dir="auto">[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
 ````````````````````````````````
 
 
@@ -8400,7 +8400,7 @@ However, links may not contain other links, at any level of nesting.
 
 [ref]: /uri
 .
-<p>[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
+<p dir="auto">[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
 ````````````````````````````````
 
 
@@ -8415,7 +8415,7 @@ emphasis grouping:
 
 [ref]: /uri
 .
-<p>*<a href="/uri">foo*</a></p>
+<p dir="auto">*<a href="/uri">foo*</a></p>
 ````````````````````````````````
 
 
@@ -8424,7 +8424,7 @@ emphasis grouping:
 
 [ref]: /uri
 .
-<p><a href="/uri">foo *bar</a>*</p>
+<p dir="auto"><a href="/uri">foo *bar</a>*</p>
 ````````````````````````````````
 
 
@@ -8436,7 +8436,7 @@ and autolinks over link grouping:
 
 [ref]: /uri
 .
-<p>[foo <bar attr="][ref]"></p>
+<p dir="auto">[foo <bar attr="][ref]"></p>
 ````````````````````````````````
 
 
@@ -8445,7 +8445,7 @@ and autolinks over link grouping:
 
 [ref]: /uri
 .
-<p>[foo<code>][ref]</code></p>
+<p dir="auto">[foo<code>][ref]</code></p>
 ````````````````````````````````
 
 
@@ -8454,7 +8454,7 @@ and autolinks over link grouping:
 
 [ref]: /uri
 .
-<p>[foo<a href="http://example.com/?search=%5D%5Bref%5D">http://example.com/?search=][ref]</a></p>
+<p dir="auto">[foo<a href="http://example.com/?search=%5D%5Bref%5D">http://example.com/?search=][ref]</a></p>
 ````````````````````````````````
 
 
@@ -8465,7 +8465,7 @@ Matching is case-insensitive:
 
 [bar]: /url "title"
 .
-<p><a href="/url" title="title">foo</a></p>
+<p dir="auto"><a href="/url" title="title">foo</a></p>
 ````````````````````````````````
 
 
@@ -8476,7 +8476,7 @@ Unicode case fold is used:
 
 [SS]: /url
 .
-<p><a href="/url">ẞ</a></p>
+<p dir="auto"><a href="/url">ẞ</a></p>
 ````````````````````````````````
 
 
@@ -8489,7 +8489,7 @@ purposes of determining matching:
 
 [Baz][Foo bar]
 .
-<p><a href="/url">Baz</a></p>
+<p dir="auto"><a href="/url">Baz</a></p>
 ````````````````````````````````
 
 
@@ -8501,7 +8501,7 @@ No spaces, tabs, or line endings are allowed between the [link text] and the
 
 [bar]: /url "title"
 .
-<p>[foo] <a href="/url" title="title">bar</a></p>
+<p dir="auto">[foo] <a href="/url" title="title">bar</a></p>
 ````````````````````````````````
 
 
@@ -8511,7 +8511,7 @@ No spaces, tabs, or line endings are allowed between the [link text] and the
 
 [bar]: /url "title"
 .
-<p>[foo]
+<p dir="auto">[foo]
 <a href="/url" title="title">bar</a></p>
 ````````````````````````````````
 
@@ -8553,7 +8553,7 @@ the first is used:
 
 [bar][foo]
 .
-<p><a href="/url1">bar</a></p>
+<p dir="auto"><a href="/url1">bar</a></p>
 ````````````````````````````````
 
 
@@ -8566,7 +8566,7 @@ labels define equivalent inline content:
 
 [foo!]: /url
 .
-<p>[bar][foo!]</p>
+<p dir="auto">[bar][foo!]</p>
 ````````````````````````````````
 
 
@@ -8578,8 +8578,8 @@ backslash-escaped:
 
 [ref[]: /uri
 .
-<p>[foo][ref[]</p>
-<p>[ref[]: /uri</p>
+<p dir="auto">[foo][ref[]</p>
+<p dir="auto">[ref[]: /uri</p>
 ````````````````````````````````
 
 
@@ -8588,8 +8588,8 @@ backslash-escaped:
 
 [ref[bar]]: /uri
 .
-<p>[foo][ref[bar]]</p>
-<p>[ref[bar]]: /uri</p>
+<p dir="auto">[foo][ref[bar]]</p>
+<p dir="auto">[ref[bar]]: /uri</p>
 ````````````````````````````````
 
 
@@ -8598,8 +8598,8 @@ backslash-escaped:
 
 [[[foo]]]: /url
 .
-<p>[[[foo]]]</p>
-<p>[[[foo]]]: /url</p>
+<p dir="auto">[[[foo]]]</p>
+<p dir="auto">[[[foo]]]: /url</p>
 ````````````````````````````````
 
 
@@ -8608,7 +8608,7 @@ backslash-escaped:
 
 [ref\[]: /uri
 .
-<p><a href="/uri">foo</a></p>
+<p dir="auto"><a href="/uri">foo</a></p>
 ````````````````````````````````
 
 
@@ -8619,7 +8619,7 @@ Note that in this example `]` is not backslash-escaped:
 
 [bar\\]
 .
-<p><a href="/uri">bar\</a></p>
+<p dir="auto"><a href="/uri">bar\</a></p>
 ````````````````````````````````
 
 
@@ -8631,8 +8631,8 @@ line ending:
 
 []: /uri
 .
-<p>[]</p>
-<p>[]: /uri</p>
+<p dir="auto">[]</p>
+<p dir="auto">[]: /uri</p>
 ````````````````````````````````
 
 
@@ -8643,9 +8643,9 @@ line ending:
 [
  ]: /uri
 .
-<p>[
+<p dir="auto">[
 ]</p>
-<p>[
+<p dir="auto">[
 ]: /uri</p>
 ````````````````````````````````
 
@@ -8664,7 +8664,7 @@ provided by the matching reference link definition.  Thus,
 
 [foo]: /url "title"
 .
-<p><a href="/url" title="title">foo</a></p>
+<p dir="auto"><a href="/url" title="title">foo</a></p>
 ````````````````````````````````
 
 
@@ -8673,7 +8673,7 @@ provided by the matching reference link definition.  Thus,
 
 [*foo* bar]: /url "title"
 .
-<p><a href="/url" title="title"><em>foo</em> bar</a></p>
+<p dir="auto"><a href="/url" title="title"><em>foo</em> bar</a></p>
 ````````````````````````````````
 
 
@@ -8684,7 +8684,7 @@ The link labels are case-insensitive:
 
 [foo]: /url "title"
 .
-<p><a href="/url" title="title">Foo</a></p>
+<p dir="auto"><a href="/url" title="title">Foo</a></p>
 ````````````````````````````````
 
 
@@ -8698,7 +8698,7 @@ allowed between the two sets of brackets:
 
 [foo]: /url "title"
 .
-<p><a href="/url" title="title">foo</a>
+<p dir="auto"><a href="/url" title="title">foo</a>
 []</p>
 ````````````````````````````````
 
@@ -8717,7 +8717,7 @@ Thus, `[foo]` is equivalent to `[foo][]`.
 
 [foo]: /url "title"
 .
-<p><a href="/url" title="title">foo</a></p>
+<p dir="auto"><a href="/url" title="title">foo</a></p>
 ````````````````````````````````
 
 
@@ -8726,7 +8726,7 @@ Thus, `[foo]` is equivalent to `[foo][]`.
 
 [*foo* bar]: /url "title"
 .
-<p><a href="/url" title="title"><em>foo</em> bar</a></p>
+<p dir="auto"><a href="/url" title="title"><em>foo</em> bar</a></p>
 ````````````````````````````````
 
 
@@ -8735,7 +8735,7 @@ Thus, `[foo]` is equivalent to `[foo][]`.
 
 [*foo* bar]: /url "title"
 .
-<p>[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
+<p dir="auto">[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
 ````````````````````````````````
 
 
@@ -8744,7 +8744,7 @@ Thus, `[foo]` is equivalent to `[foo][]`.
 
 [foo]: /url
 .
-<p>[[bar <a href="/url">foo</a></p>
+<p dir="auto">[[bar <a href="/url">foo</a></p>
 ````````````````````````````````
 
 
@@ -8755,7 +8755,7 @@ The link labels are case-insensitive:
 
 [foo]: /url "title"
 .
-<p><a href="/url" title="title">Foo</a></p>
+<p dir="auto"><a href="/url" title="title">Foo</a></p>
 ````````````````````````````````
 
 
@@ -8766,7 +8766,7 @@ A space after the link text should be preserved:
 
 [foo]: /url
 .
-<p><a href="/url">foo</a> bar</p>
+<p dir="auto"><a href="/url">foo</a> bar</p>
 ````````````````````````````````
 
 
@@ -8778,7 +8778,7 @@ opening bracket to avoid links:
 
 [foo]: /url "title"
 .
-<p>[foo]</p>
+<p dir="auto">[foo]</p>
 ````````````````````````````````
 
 
@@ -8790,7 +8790,7 @@ following closing bracket:
 
 *[foo*]
 .
-<p>*<a href="/url">foo*</a></p>
+<p dir="auto">*<a href="/url">foo*</a></p>
 ````````````````````````````````
 
 
@@ -8803,7 +8803,7 @@ references:
 [foo]: /url1
 [bar]: /url2
 .
-<p><a href="/url2">foo</a></p>
+<p dir="auto"><a href="/url2">foo</a></p>
 ````````````````````````````````
 
 ```````````````````````````````` example
@@ -8811,7 +8811,7 @@ references:
 
 [foo]: /url1
 .
-<p><a href="/url1">foo</a></p>
+<p dir="auto"><a href="/url1">foo</a></p>
 ````````````````````````````````
 
 Inline links also take precedence:
@@ -8821,7 +8821,7 @@ Inline links also take precedence:
 
 [foo]: /url1
 .
-<p><a href="">foo</a></p>
+<p dir="auto"><a href="">foo</a></p>
 ````````````````````````````````
 
 ```````````````````````````````` example
@@ -8829,7 +8829,7 @@ Inline links also take precedence:
 
 [foo]: /url1
 .
-<p><a href="/url1">foo</a>(not a link)</p>
+<p dir="auto"><a href="/url1">foo</a>(not a link)</p>
 ````````````````````````````````
 
 In the following case `[bar][baz]` is parsed as a reference,
@@ -8840,7 +8840,7 @@ In the following case `[bar][baz]` is parsed as a reference,
 
 [baz]: /url
 .
-<p>[foo]<a href="/url">bar</a></p>
+<p dir="auto">[foo]<a href="/url">bar</a></p>
 ````````````````````````````````
 
 
@@ -8853,7 +8853,7 @@ Here, though, `[foo][bar]` is parsed as a reference, since
 [baz]: /url1
 [bar]: /url2
 .
-<p><a href="/url2">foo</a><a href="/url1">baz</a></p>
+<p dir="auto"><a href="/url2">foo</a><a href="/url1">baz</a></p>
 ````````````````````````````````
 
 
@@ -8866,7 +8866,7 @@ is followed by a link label (even though `[bar]` is not defined):
 [baz]: /url1
 [foo]: /url2
 .
-<p>[foo]<a href="/url1">bar</a></p>
+<p dir="auto">[foo]<a href="/url1">bar</a></p>
 ````````````````````````````````
 
 
@@ -8886,7 +8886,7 @@ this is standardly used as the image's `alt` attribute.
 ```````````````````````````````` example
 ![foo](/url "title")
 .
-<p><img src="/url" alt="foo" title="title" /></p>
+<p dir="auto"><img src="/url" alt="foo" title="title" /></p>
 ````````````````````````````````
 
 
@@ -8895,21 +8895,21 @@ this is standardly used as the image's `alt` attribute.
 
 [foo *bar*]: train.jpg "train & tracks"
 .
-<p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
+<p dir="auto"><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ![foo ![bar](/url)](/url2)
 .
-<p><img src="/url2" alt="foo bar" /></p>
+<p dir="auto"><img src="/url2" alt="foo bar" /></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ![foo [bar](/url)](/url2)
 .
-<p><img src="/url2" alt="foo bar" /></p>
+<p dir="auto"><img src="/url2" alt="foo bar" /></p>
 ````````````````````````````````
 
 
@@ -8925,7 +8925,7 @@ content is rendered, without formatting.
 
 [foo *bar*]: train.jpg "train & tracks"
 .
-<p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
+<p dir="auto"><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
 ````````````````````````````````
 
 
@@ -8934,35 +8934,35 @@ content is rendered, without formatting.
 
 [FOOBAR]: train.jpg "train & tracks"
 .
-<p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
+<p dir="auto"><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ![foo](train.jpg)
 .
-<p><img src="train.jpg" alt="foo" /></p>
+<p dir="auto"><img src="train.jpg" alt="foo" /></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 My ![foo bar](/path/to/train.jpg  "title"   )
 .
-<p>My <img src="/path/to/train.jpg" alt="foo bar" title="title" /></p>
+<p dir="auto">My <img src="/path/to/train.jpg" alt="foo bar" title="title" /></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ![foo](<url>)
 .
-<p><img src="url" alt="foo" /></p>
+<p dir="auto"><img src="url" alt="foo" /></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ![](/url)
 .
-<p><img src="/url" alt="" /></p>
+<p dir="auto"><img src="/url" alt="" /></p>
 ````````````````````````````````
 
 
@@ -8973,7 +8973,7 @@ Reference-style:
 
 [bar]: /url
 .
-<p><img src="/url" alt="foo" /></p>
+<p dir="auto"><img src="/url" alt="foo" /></p>
 ````````````````````````````````
 
 
@@ -8982,7 +8982,7 @@ Reference-style:
 
 [BAR]: /url
 .
-<p><img src="/url" alt="foo" /></p>
+<p dir="auto"><img src="/url" alt="foo" /></p>
 ````````````````````````````````
 
 
@@ -8993,7 +8993,7 @@ Collapsed:
 
 [foo]: /url "title"
 .
-<p><img src="/url" alt="foo" title="title" /></p>
+<p dir="auto"><img src="/url" alt="foo" title="title" /></p>
 ````````````````````````````````
 
 
@@ -9002,7 +9002,7 @@ Collapsed:
 
 [*foo* bar]: /url "title"
 .
-<p><img src="/url" alt="foo bar" title="title" /></p>
+<p dir="auto"><img src="/url" alt="foo bar" title="title" /></p>
 ````````````````````````````````
 
 
@@ -9013,7 +9013,7 @@ The labels are case-insensitive:
 
 [foo]: /url "title"
 .
-<p><img src="/url" alt="Foo" title="title" /></p>
+<p dir="auto"><img src="/url" alt="Foo" title="title" /></p>
 ````````````````````````````````
 
 
@@ -9026,7 +9026,7 @@ between the two sets of brackets:
 
 [foo]: /url "title"
 .
-<p><img src="/url" alt="foo" title="title" />
+<p dir="auto"><img src="/url" alt="foo" title="title" />
 []</p>
 ````````````````````````````````
 
@@ -9038,7 +9038,7 @@ Shortcut:
 
 [foo]: /url "title"
 .
-<p><img src="/url" alt="foo" title="title" /></p>
+<p dir="auto"><img src="/url" alt="foo" title="title" /></p>
 ````````````````````````````````
 
 
@@ -9047,7 +9047,7 @@ Shortcut:
 
 [*foo* bar]: /url "title"
 .
-<p><img src="/url" alt="foo bar" title="title" /></p>
+<p dir="auto"><img src="/url" alt="foo bar" title="title" /></p>
 ````````````````````````````````
 
 
@@ -9058,8 +9058,8 @@ Note that link labels cannot contain unescaped brackets:
 
 [[foo]]: /url "title"
 .
-<p>![[foo]]</p>
-<p>[[foo]]: /url &quot;title&quot;</p>
+<p dir="auto">![[foo]]</p>
+<p dir="auto">[[foo]]: /url &quot;title&quot;</p>
 ````````````````````````````````
 
 
@@ -9070,7 +9070,7 @@ The link labels are case-insensitive:
 
 [foo]: /url "title"
 .
-<p><img src="/url" alt="Foo" title="title" /></p>
+<p dir="auto"><img src="/url" alt="Foo" title="title" /></p>
 ````````````````````````````````
 
 
@@ -9082,7 +9082,7 @@ backslash-escape the opening `[`:
 
 [foo]: /url "title"
 .
-<p>![foo]</p>
+<p dir="auto">![foo]</p>
 ````````````````````````````````
 
 
@@ -9094,7 +9094,7 @@ If you want a link after a literal `!`, backslash-escape the
 
 [foo]: /url "title"
 .
-<p>!<a href="/url" title="title">foo</a></p>
+<p dir="auto">!<a href="/url" title="title">foo</a></p>
 ````````````````````````````````
 
 
@@ -9125,21 +9125,21 @@ Here are some valid autolinks:
 ```````````````````````````````` example
 <http://foo.bar.baz>
 .
-<p><a href="http://foo.bar.baz">http://foo.bar.baz</a></p>
+<p dir="auto"><a href="http://foo.bar.baz">http://foo.bar.baz</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 <http://foo.bar.baz/test?q=hello&id=22&boolean>
 .
-<p><a href="http://foo.bar.baz/test?q=hello&amp;id=22&amp;boolean">http://foo.bar.baz/test?q=hello&amp;id=22&amp;boolean</a></p>
+<p dir="auto"><a href="http://foo.bar.baz/test?q=hello&amp;id=22&amp;boolean">http://foo.bar.baz/test?q=hello&amp;id=22&amp;boolean</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 <irc://foo.bar:2233/baz>
 .
-<p><a href="irc://foo.bar:2233/baz">irc://foo.bar:2233/baz</a></p>
+<p dir="auto"><a href="irc://foo.bar:2233/baz">irc://foo.bar:2233/baz</a></p>
 ````````````````````````````````
 
 
@@ -9148,7 +9148,7 @@ Uppercase is also fine:
 ```````````````````````````````` example
 <MAILTO:FOO@BAR.BAZ>
 .
-<p><a href="MAILTO:FOO@BAR.BAZ">MAILTO:FOO@BAR.BAZ</a></p>
+<p dir="auto"><a href="MAILTO:FOO@BAR.BAZ">MAILTO:FOO@BAR.BAZ</a></p>
 ````````````````````````````````
 
 
@@ -9160,28 +9160,28 @@ with their syntax:
 ```````````````````````````````` example
 <a+b+c:d>
 .
-<p><a href="a+b+c:d">a+b+c:d</a></p>
+<p dir="auto"><a href="a+b+c:d">a+b+c:d</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 <made-up-scheme://foo,bar>
 .
-<p><a href="made-up-scheme://foo,bar">made-up-scheme://foo,bar</a></p>
+<p dir="auto"><a href="made-up-scheme://foo,bar">made-up-scheme://foo,bar</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 <http://../>
 .
-<p><a href="http://../">http://../</a></p>
+<p dir="auto"><a href="http://../">http://../</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 <localhost:5001/foo>
 .
-<p><a href="localhost:5001/foo">localhost:5001/foo</a></p>
+<p dir="auto"><a href="localhost:5001/foo">localhost:5001/foo</a></p>
 ````````````````````````````````
 
 
@@ -9190,7 +9190,7 @@ Spaces are not allowed in autolinks:
 ```````````````````````````````` example
 <http://foo.bar/baz bim>
 .
-<p>&lt;http://foo.bar/baz bim&gt;</p>
+<p dir="auto">&lt;http://foo.bar/baz bim&gt;</p>
 ````````````````````````````````
 
 
@@ -9199,7 +9199,7 @@ Backslash-escapes do not work inside autolinks:
 ```````````````````````````````` example
 <http://example.com/\[\>
 .
-<p><a href="http://example.com/%5C%5B%5C">http://example.com/\[\</a></p>
+<p dir="auto"><a href="http://example.com/%5C%5B%5C">http://example.com/\[\</a></p>
 ````````````````````````````````
 
 
@@ -9221,14 +9221,14 @@ Examples of email autolinks:
 ```````````````````````````````` example
 <foo@bar.example.com>
 .
-<p><a href="mailto:foo@bar.example.com">foo@bar.example.com</a></p>
+<p dir="auto"><a href="mailto:foo@bar.example.com">foo@bar.example.com</a></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 <foo+special@Bar.baz-bar0.com>
 .
-<p><a href="mailto:foo+special@Bar.baz-bar0.com">foo+special@Bar.baz-bar0.com</a></p>
+<p dir="auto"><a href="mailto:foo+special@Bar.baz-bar0.com">foo+special@Bar.baz-bar0.com</a></p>
 ````````````````````````````````
 
 
@@ -9237,7 +9237,7 @@ Backslash-escapes do not work inside email autolinks:
 ```````````````````````````````` example
 <foo\+@bar.example.com>
 .
-<p>&lt;foo+@bar.example.com&gt;</p>
+<p dir="auto">&lt;foo+@bar.example.com&gt;</p>
 ````````````````````````````````
 
 
@@ -9246,42 +9246,42 @@ These are not autolinks:
 ```````````````````````````````` example
 <>
 .
-<p>&lt;&gt;</p>
+<p dir="auto">&lt;&gt;</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 < http://foo.bar >
 .
-<p>&lt; http://foo.bar &gt;</p>
+<p dir="auto">&lt; http://foo.bar &gt;</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 <m:abc>
 .
-<p>&lt;m:abc&gt;</p>
+<p dir="auto">&lt;m:abc&gt;</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 <foo.bar.baz>
 .
-<p>&lt;foo.bar.baz&gt;</p>
+<p dir="auto">&lt;foo.bar.baz&gt;</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 http://example.com
 .
-<p>http://example.com</p>
+<p dir="auto">http://example.com</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo@bar.example.com
 .
-<p>foo@bar.example.com</p>
+<p dir="auto">foo@bar.example.com</p>
 ````````````````````````````````
 
 <div class="extension">
@@ -9310,7 +9310,7 @@ The scheme `http` will be inserted automatically:
 ```````````````````````````````` example autolink
 www.commonmark.org
 .
-<p><a href="http://www.commonmark.org">www.commonmark.org</a></p>
+<p dir="auto"><a href="http://www.commonmark.org">www.commonmark.org</a></p>
 ````````````````````````````````
 
 After a [valid domain], zero or more non-space non-`<` characters may follow:
@@ -9318,7 +9318,7 @@ After a [valid domain], zero or more non-space non-`<` characters may follow:
 ```````````````````````````````` example autolink
 Visit www.commonmark.org/help for more information.
 .
-<p>Visit <a href="http://www.commonmark.org/help">www.commonmark.org/help</a> for more information.</p>
+<p dir="auto">Visit <a href="http://www.commonmark.org/help">www.commonmark.org/help</a> for more information.</p>
 ````````````````````````````````
 
 We then apply [extended autolink path validation](@) as follows:
@@ -9332,8 +9332,8 @@ Visit www.commonmark.org.
 
 Visit www.commonmark.org/a.b.
 .
-<p>Visit <a href="http://www.commonmark.org">www.commonmark.org</a>.</p>
-<p>Visit <a href="http://www.commonmark.org/a.b">www.commonmark.org/a.b</a>.</p>
+<p dir="auto">Visit <a href="http://www.commonmark.org">www.commonmark.org</a>.</p>
+<p dir="auto">Visit <a href="http://www.commonmark.org/a.b">www.commonmark.org/a.b</a>.</p>
 ````````````````````````````````
 
 When an autolink ends in `)`, we scan the entire autolink for the total number
@@ -9350,10 +9350,10 @@ www.google.com/search?q=Markup+(business)))
 
 (www.google.com/search?q=Markup+(business)
 .
-<p><a href="http://www.google.com/search?q=Markup+(business)">www.google.com/search?q=Markup+(business)</a></p>
-<p><a href="http://www.google.com/search?q=Markup+(business)">www.google.com/search?q=Markup+(business)</a>))</p>
-<p>(<a href="http://www.google.com/search?q=Markup+(business)">www.google.com/search?q=Markup+(business)</a>)</p>
-<p>(<a href="http://www.google.com/search?q=Markup+(business)">www.google.com/search?q=Markup+(business)</a></p>
+<p dir="auto"><a href="http://www.google.com/search?q=Markup+(business)">www.google.com/search?q=Markup+(business)</a></p>
+<p dir="auto"><a href="http://www.google.com/search?q=Markup+(business)">www.google.com/search?q=Markup+(business)</a>))</p>
+<p dir="auto">(<a href="http://www.google.com/search?q=Markup+(business)">www.google.com/search?q=Markup+(business)</a>)</p>
+<p dir="auto">(<a href="http://www.google.com/search?q=Markup+(business)">www.google.com/search?q=Markup+(business)</a></p>
 ````````````````````````````````
 
 This check is only done when the link ends in a closing parentheses `)`, so if
@@ -9363,7 +9363,7 @@ applied:
 ```````````````````````````````` example autolink
 www.google.com/search?q=(business))+ok
 .
-<p><a href="http://www.google.com/search?q=(business))+ok">www.google.com/search?q=(business))+ok</a></p>
+<p dir="auto"><a href="http://www.google.com/search?q=(business))+ok">www.google.com/search?q=(business))+ok</a></p>
 ````````````````````````````````
 
 If an autolink ends in a semicolon (`;`), we check to see if it appears to
@@ -9376,8 +9376,8 @@ www.google.com/search?q=commonmark&hl=en
 
 www.google.com/search?q=commonmark&hl;
 .
-<p><a href="http://www.google.com/search?q=commonmark&amp;hl=en">www.google.com/search?q=commonmark&amp;hl=en</a></p>
-<p><a href="http://www.google.com/search?q=commonmark">www.google.com/search?q=commonmark</a>&amp;hl;</p>
+<p dir="auto"><a href="http://www.google.com/search?q=commonmark&amp;hl=en">www.google.com/search?q=commonmark&amp;hl=en</a></p>
+<p dir="auto"><a href="http://www.google.com/search?q=commonmark">www.google.com/search?q=commonmark</a>&amp;hl;</p>
 ````````````````````````````````
 
 `<` immediately ends an autolink.
@@ -9385,7 +9385,7 @@ www.google.com/search?q=commonmark&hl;
 ```````````````````````````````` example autolink
 www.commonmark.org/he<lp
 .
-<p><a href="http://www.commonmark.org/he">www.commonmark.org/he</a>&lt;lp</p>
+<p dir="auto"><a href="http://www.commonmark.org/he">www.commonmark.org/he</a>&lt;lp</p>
 ````````````````````````````````
 
 An [extended url autolink](@) will be recognised when one of the schemes
@@ -9400,9 +9400,9 @@ http://commonmark.org
 
 Anonymous FTP is available at ftp://foo.bar.baz.
 .
-<p><a href="http://commonmark.org">http://commonmark.org</a></p>
-<p>(Visit <a href="https://encrypted.google.com/search?q=Markup+(business)">https://encrypted.google.com/search?q=Markup+(business)</a>)</p>
-<p>Anonymous FTP is available at <a href="ftp://foo.bar.baz">ftp://foo.bar.baz</a>.</p>
+<p dir="auto"><a href="http://commonmark.org">http://commonmark.org</a></p>
+<p dir="auto">(Visit <a href="https://encrypted.google.com/search?q=Markup+(business)">https://encrypted.google.com/search?q=Markup+(business)</a>)</p>
+<p dir="auto">Anonymous FTP is available at <a href="ftp://foo.bar.baz">ftp://foo.bar.baz</a>.</p>
 ````````````````````````````````
 
 
@@ -9422,7 +9422,7 @@ The scheme `mailto:` will automatically be added to the generated link:
 ```````````````````````````````` example autolink
 foo@bar.baz
 .
-<p><a href="mailto:foo@bar.baz">foo@bar.baz</a></p>
+<p dir="auto"><a href="mailto:foo@bar.baz">foo@bar.baz</a></p>
 ````````````````````````````````
 
 `+` can occur before the `@`, but not after.
@@ -9430,7 +9430,7 @@ foo@bar.baz
 ```````````````````````````````` example autolink
 hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
 .
-<p>hello@mail+xyz.example isn't valid, but <a href="mailto:hello+xyz@mail.example">hello+xyz@mail.example</a> is.</p>
+<p dir="auto">hello@mail+xyz.example isn't valid, but <a href="mailto:hello+xyz@mail.example">hello+xyz@mail.example</a> is.</p>
 ````````````````````````````````
 
 `.`, `-`, and `_` can occur on both sides of the `@`, but only `.` may occur at
@@ -9446,10 +9446,10 @@ a.b-c_d@a.b-
 
 a.b-c_d@a.b_
 .
-<p><a href="mailto:a.b-c_d@a.b">a.b-c_d@a.b</a></p>
-<p><a href="mailto:a.b-c_d@a.b">a.b-c_d@a.b</a>.</p>
-<p>a.b-c_d@a.b-</p>
-<p>a.b-c_d@a.b_</p>
+<p dir="auto"><a href="mailto:a.b-c_d@a.b">a.b-c_d@a.b</a></p>
+<p dir="auto"><a href="mailto:a.b-c_d@a.b">a.b-c_d@a.b</a>.</p>
+<p dir="auto">a.b-c_d@a.b-</p>
+<p dir="auto">a.b-c_d@a.b_</p>
 ````````````````````````````````
 
 </div>
@@ -9531,7 +9531,7 @@ Here are some simple open tags:
 ```````````````````````````````` example
 <a><bab><c2c>
 .
-<p><a><bab><c2c></p>
+<p dir="auto"><a><bab><c2c></p>
 ````````````````````````````````
 
 
@@ -9540,7 +9540,7 @@ Empty elements:
 ```````````````````````````````` example
 <a/><b2/>
 .
-<p><a/><b2/></p>
+<p dir="auto"><a/><b2/></p>
 ````````````````````````````````
 
 
@@ -9550,7 +9550,7 @@ Whitespace is allowed:
 <a  /><b2
 data="foo" >
 .
-<p><a  /><b2
+<p dir="auto"><a  /><b2
 data="foo" ></p>
 ````````````````````````````````
 
@@ -9561,7 +9561,7 @@ With attributes:
 <a foo="bar" bam = 'baz <em>"</em>'
 _boolean zoop:33=zoop:33 />
 .
-<p><a foo="bar" bam = 'baz <em>"</em>'
+<p dir="auto"><a foo="bar" bam = 'baz <em>"</em>'
 _boolean zoop:33=zoop:33 /></p>
 ````````````````````````````````
 
@@ -9571,7 +9571,7 @@ Custom tag names can be used:
 ```````````````````````````````` example
 Foo <responsive-image src="foo.jpg" />
 .
-<p>Foo <responsive-image src="foo.jpg" /></p>
+<p dir="auto">Foo <responsive-image src="foo.jpg" /></p>
 ````````````````````````````````
 
 
@@ -9580,7 +9580,7 @@ Illegal tag names, not parsed as HTML:
 ```````````````````````````````` example
 <33> <__>
 .
-<p>&lt;33&gt; &lt;__&gt;</p>
+<p dir="auto">&lt;33&gt; &lt;__&gt;</p>
 ````````````````````````````````
 
 
@@ -9589,7 +9589,7 @@ Illegal attribute names:
 ```````````````````````````````` example
 <a h*#ref="hi">
 .
-<p>&lt;a h*#ref=&quot;hi&quot;&gt;</p>
+<p dir="auto">&lt;a h*#ref=&quot;hi&quot;&gt;</p>
 ````````````````````````````````
 
 
@@ -9598,7 +9598,7 @@ Illegal attribute values:
 ```````````````````````````````` example
 <a href="hi'> <a href=hi'>
 .
-<p>&lt;a href=&quot;hi'&gt; &lt;a href=hi'&gt;</p>
+<p dir="auto">&lt;a href=&quot;hi'&gt; &lt;a href=hi'&gt;</p>
 ````````````````````````````````
 
 
@@ -9610,7 +9610,7 @@ foo><bar/ >
 <foo bar=baz
 bim!bop />
 .
-<p>&lt; a&gt;&lt;
+<p dir="auto">&lt; a&gt;&lt;
 foo&gt;&lt;bar/ &gt;
 &lt;foo bar=baz
 bim!bop /&gt;</p>
@@ -9622,7 +9622,7 @@ Missing whitespace:
 ```````````````````````````````` example
 <a href='bar'title=title>
 .
-<p>&lt;a href='bar'title=title&gt;</p>
+<p dir="auto">&lt;a href='bar'title=title&gt;</p>
 ````````````````````````````````
 
 
@@ -9631,7 +9631,7 @@ Closing tags:
 ```````````````````````````````` example
 </a></foo >
 .
-<p></a></foo ></p>
+<p dir="auto"></a></foo ></p>
 ````````````````````````````````
 
 
@@ -9640,7 +9640,7 @@ Illegal attributes in closing tag:
 ```````````````````````````````` example
 </a href="foo">
 .
-<p>&lt;/a href=&quot;foo&quot;&gt;</p>
+<p dir="auto">&lt;/a href=&quot;foo&quot;&gt;</p>
 ````````````````````````````````
 
 
@@ -9650,7 +9650,7 @@ Comments:
 foo <!-- this is a
 comment - with hyphen -->
 .
-<p>foo <!-- this is a
+<p dir="auto">foo <!-- this is a
 comment - with hyphen --></p>
 ````````````````````````````````
 
@@ -9658,7 +9658,7 @@ comment - with hyphen --></p>
 ```````````````````````````````` example
 foo <!-- not a comment -- two hyphens -->
 .
-<p>foo &lt;!-- not a comment -- two hyphens --&gt;</p>
+<p dir="auto">foo &lt;!-- not a comment -- two hyphens --&gt;</p>
 ````````````````````````````````
 
 
@@ -9669,8 +9669,8 @@ foo <!--> foo -->
 
 foo <!-- foo--->
 .
-<p>foo &lt;!--&gt; foo --&gt;</p>
-<p>foo &lt;!-- foo---&gt;</p>
+<p dir="auto">foo &lt;!--&gt; foo --&gt;</p>
+<p dir="auto">foo &lt;!-- foo---&gt;</p>
 ````````````````````````````````
 
 
@@ -9679,7 +9679,7 @@ Processing instructions:
 ```````````````````````````````` example
 foo <?php echo $a; ?>
 .
-<p>foo <?php echo $a; ?></p>
+<p dir="auto">foo <?php echo $a; ?></p>
 ````````````````````````````````
 
 
@@ -9688,7 +9688,7 @@ Declarations:
 ```````````````````````````````` example
 foo <!ELEMENT br EMPTY>
 .
-<p>foo <!ELEMENT br EMPTY></p>
+<p dir="auto">foo <!ELEMENT br EMPTY></p>
 ````````````````````````````````
 
 
@@ -9697,7 +9697,7 @@ CDATA sections:
 ```````````````````````````````` example
 foo <![CDATA[>&<]]>
 .
-<p>foo <![CDATA[>&<]]></p>
+<p dir="auto">foo <![CDATA[>&<]]></p>
 ````````````````````````````````
 
 
@@ -9707,7 +9707,7 @@ attributes:
 ```````````````````````````````` example
 foo <a href="&ouml;">
 .
-<p>foo <a href="&ouml;"></p>
+<p dir="auto">foo <a href="&ouml;"></p>
 ````````````````````````````````
 
 
@@ -9716,14 +9716,14 @@ Backslash escapes do not work in HTML attributes:
 ```````````````````````````````` example
 foo <a href="\*">
 .
-<p>foo <a href="\*"></p>
+<p dir="auto">foo <a href="\*"></p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 <a href="\"">
 .
-<p>&lt;a href=&quot;&quot;&quot;&gt;</p>
+<p dir="auto">&lt;a href=&quot;&quot;&quot;&gt;</p>
 ````````````````````````````````
 
 
@@ -9758,7 +9758,7 @@ All other HTML tags are left untouched.
   <xmp> is disallowed.  <XMP> is also disallowed.
 </blockquote>
 .
-<p><strong> &lt;title> &lt;style> <em></p>
+<p dir="auto"><strong> &lt;title> &lt;style> <em></p>
 <blockquote>
   &lt;xmp> is disallowed.  &lt;XMP> is also disallowed.
 </blockquote>
@@ -9777,7 +9777,7 @@ in HTML as a `<br />` tag):
 foo  
 baz
 .
-<p>foo<br />
+<p dir="auto">foo<br />
 baz</p>
 ````````````````````````````````
 
@@ -9789,7 +9789,7 @@ For a more visible alternative, a backslash before the
 foo\
 baz
 .
-<p>foo<br />
+<p dir="auto">foo<br />
 baz</p>
 ````````````````````````````````
 
@@ -9800,7 +9800,7 @@ More than two spaces can be used:
 foo       
 baz
 .
-<p>foo<br />
+<p dir="auto">foo<br />
 baz</p>
 ````````````````````````````````
 
@@ -9811,7 +9811,7 @@ Leading spaces at the beginning of the next line are ignored:
 foo  
      bar
 .
-<p>foo<br />
+<p dir="auto">foo<br />
 bar</p>
 ````````````````````````````````
 
@@ -9820,7 +9820,7 @@ bar</p>
 foo\
      bar
 .
-<p>foo<br />
+<p dir="auto">foo<br />
 bar</p>
 ````````````````````````````````
 
@@ -9832,7 +9832,7 @@ that allow inline content:
 *foo  
 bar*
 .
-<p><em>foo<br />
+<p dir="auto"><em>foo<br />
 bar</em></p>
 ````````````````````````````````
 
@@ -9841,7 +9841,7 @@ bar</em></p>
 *foo\
 bar*
 .
-<p><em>foo<br />
+<p dir="auto"><em>foo<br />
 bar</em></p>
 ````````````````````````````````
 
@@ -9852,7 +9852,7 @@ Hard line breaks do not occur inside code spans
 `code  
 span`
 .
-<p><code>code   span</code></p>
+<p dir="auto"><code>code   span</code></p>
 ````````````````````````````````
 
 
@@ -9860,7 +9860,7 @@ span`
 `code\
 span`
 .
-<p><code>code\ span</code></p>
+<p dir="auto"><code>code\ span</code></p>
 ````````````````````````````````
 
 
@@ -9870,7 +9870,7 @@ or HTML tags:
 <a href="foo  
 bar">
 .
-<p><a href="foo  
+<p dir="auto"><a href="foo  
 bar"></p>
 ````````````````````````````````
 
@@ -9879,7 +9879,7 @@ bar"></p>
 <a href="foo\
 bar">
 .
-<p><a href="foo\
+<p dir="auto"><a href="foo\
 bar"></p>
 ````````````````````````````````
 
@@ -9891,28 +9891,28 @@ other block element:
 ```````````````````````````````` example
 foo\
 .
-<p>foo\</p>
+<p dir="auto">foo\</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 foo  
 .
-<p>foo</p>
+<p dir="auto">foo</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ### foo\
 .
-<h3>foo\</h3>
+<h3 dir="auto">foo\</h3>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 ### foo  
 .
-<h3>foo</h3>
+<h3 dir="auto">foo</h3>
 ````````````````````````````````
 
 
@@ -9928,7 +9928,7 @@ browsers. In the examples here, a [line ending] will be used.)
 foo
 baz
 .
-<p>foo
+<p dir="auto">foo
 baz</p>
 ````````````````````````````````
 
@@ -9940,7 +9940,7 @@ removed:
 foo 
  baz
 .
-<p>foo
+<p dir="auto">foo
 baz</p>
 ````````````````````````````````
 
@@ -9959,14 +9959,14 @@ be parsed as plain textual content.
 ```````````````````````````````` example
 hello $.;'there
 .
-<p>hello $.;'there</p>
+<p dir="auto">hello $.;'there</p>
 ````````````````````````````````
 
 
 ```````````````````````````````` example
 Foo χρῆν
 .
-<p>Foo χρῆν</p>
+<p dir="auto">Foo χρῆν</p>
 ````````````````````````````````
 
 
@@ -9975,7 +9975,7 @@ Internal spaces are preserved verbatim:
 ```````````````````````````````` example
 Multiple     spaces
 .
-<p>Multiple     spaces</p>
+<p dir="auto">Multiple     spaces</p>
 ````````````````````````````````
 
 
@@ -10318,4 +10318,3 @@ closers:
 
 After we're done, we remove all delimiters above `stack_bottom` from the
 delimiter stack.
-
